@@ -1,6 +1,7 @@
 # fivsevn-spec
 
-This repository defines the normative specifications governing content production, versioning, provenance, spacetime semantics, and archival practices within the fivsevn ecosystem.
+- This repository defines the normative specifications governing content production, versioning, provenance, spacetime semantics, and archival practices within the fivsevn ecosystem.
+
 
 ---
 ## repository structure-
@@ -8,69 +9,139 @@ This repository defines the normative specifications governing content productio
 ```
 fivsevn-spec/
 │
-├─ gov/  # 做事的流程和规则（怎么操作、先做什么、后做什么）
-│  ├─ gov-commit-message.md          # 每次提交代码或文件时，说明文字该怎么写
-│  │                                  （程序员常说：commit message 规范）
-│  ├─ gov-branch-strategy.md         # 不同分支是干嘛用的，什么时候该用哪一个
+├─ gov/  # 做事时需要遵循的流程和规则
+│  ├─ gov-commit-message.md          # 每次提交改动时，用一句话说明这次改动在做什么
+│  │                                  （commit message convention）
+│  ├─ gov-branch-strategy.md         # 不同分支各自用来做什么，以及在什么情况下使用
 │  │                                  （branch strategy）
-│  ├─ gov-pull-request.md            # 什么时候需要提 PR，以及 PR 是用来干什么的
-│  ├─ gov-review-process.md          # 别人要不要看、怎么看你的修改，哪些情况可以不看
-│  ├─ gov-content-lifecycle.md       # 一篇内容从草稿到发布，再到封存的完整过程
-│  └─ gov-experimental-work.md       # 试验、尝试、未定型内容放在哪里才不影响整体
+│  ├─ gov-pull-request.md            # 在什么情况下需要通过 PR 来合并修改
+│  ├─ gov-review-process.md          # 修改是否需要他人查看，以及查看时关注什么
+│  ├─ gov-content-lifecycle.md       # 一篇内容从开始撰写到正式封存的整个过程
+│  └─ gov-experimental-work.md       # 尚未定型的尝试性内容应如何存放，避免影响正式内容
 │
-├─ ver/  # 什么情况算“改了”，改了代表什么
-│  ├─ ver-spec-versioning.md         # 这些规范文件本身，版本号应该怎么变
+├─ ver/  # 与“变化”相关的规则说明
+│  ├─ ver-spec-versioning.md         # 规范文件本身在什么情况下需要更新版本号
 │  │                                  （spec versioning）
-│  ├─ ver-content-versioning.md      # 内容版本如何区分新旧，而不是只看时间
-│  ├─ ver-change-levels.md           # 小改、大改、重写，分别算哪一种变化
-│  ├─ ver-updated-vs-rewritten.md    # 是在原文基础上修改，还是等于重新写了一篇
-│  └─ ver-deprecation.md             # 什么时候一条规则或内容可以被正式弃用
+│  ├─ ver-content-versioning.md      # 内容发生变化时，如何区分新旧版本
+│  ├─ ver-change-levels.md           # 不同程度的修改分别应当如何理解和标记
+│  ├─ ver-updated-vs-rewritten.md    # 是在原内容基础上修订，还是等同于重新写了一份
+│  └─ ver-deprecation.md             # 什么时候可以明确标记某条规则或内容不再适用
 │
-├─ content/  # 内容本身应该长什么样
-│  ├─ content-frontmatter.md         # 标题、时间、状态这些“头部信息”要写哪些
-│  │                                  （frontmatter 结构）
-│  ├─ content-body-structure.md      # 正文各个部分大致怎么分、怎么排列
-│  ├─ content-section-semantics.md   # 每个部分存在的意义是什么，不是随便分的
+├─ content/  # 内容本身的组织方式
+│  ├─ content-frontmatter.md         # 标题、时间、状态等基础信息应如何填写
+│  │                                  （frontmatter structure）
+│  ├─ content-body-structure.md      # 正文内容在整体上应如何分段和排列
+│  ├─ content-section-semantics.md   # 各个内容部分分别承担什么作用
 │  │                                  （section semantics）
-│  ├─ content-multilang.md           # 同一内容有多种语言时，应该怎么标记和组织
-│  └─ content-metadata-optional.md   # 可以有、但不是必须的附加信息说明
+│  ├─ content-multilang.md           # 同一内容以多种语言呈现时的组织方式
+│  └─ content-metadata-optional.md   # 可选但不强制的补充信息说明
 │
-├─ source/  # 信息从哪里来，能不能信
-│  ├─ source-classification.md       # 不同类型资料怎么区分，比如原始资料和转述资料
-│  ├─ source-citation-rules.md       # 引用别人的内容时，应该怎么标明来源
-│  ├─ source-primary-vs-secondary.md # 什么时候必须用一手资料，什么时候二手可以
+├─ source/  # 内容所依据的信息来源
+│  ├─ source-classification.md       # 不同类型的信息来源应如何区分
+│  ├─ source-citation-rules.md       # 引用外部资料时应如何标明出处
+│  ├─ source-primary-vs-secondary.md # 在什么情况下需要直接使用原始资料
 │  ├─ source-uncertainty-and-disclaimer.md
-│  │                                  # 信息不确定时，应该如何说明、不该怎么说
-│  └─ source-link-rot-and-loss.md    # 链接失效、网页消失后该如何处理
+│  │                                  # 信息存在不确定性时应如何说明
+│  └─ source-link-rot-and-loss.md    # 当引用链接失效或来源消失时的处理方式
 │
-├─ spacetime/  # 时间、地点和当时的背景
-│  ├─ spacetime-datetime-format.md   # 时间写成什么格式，精确到哪一步
+├─ spacetime/  # 与时间和背景相关的说明
+│  ├─ spacetime-datetime-format.md   # 时间信息应采用什么格式，以及精确到什么程度
 │  │                                  （datetime format）
-│  ├─ spacetime-timezone.md          # 时间到底是哪个时区的，默认按什么算
-│  ├─ spacetime-event-time.md        # 这里的时间指事情发生的时间，而不是写文章的时间
+│  ├─ spacetime-timezone.md          # 时间所对应的时区应如何理解和标注
+│  ├─ spacetime-event-time.md        # 这里记录的时间指的是事件发生的时间
 │  ├─ spacetime-writing-vs-publish.md
-│  │                                  # 写作时间、发布时间、记录时间分别代表什么
-│  ├─ spacetime-context-validity.md  # 某个判断在什么背景下成立，过了多久可能失效
-│  └─ spacetime-retroactive-edit.md  # 事后回头修改旧内容时，允许改到什么程度
+│  │                                  # 写作时间、发布时间与记录时间之间的区别
+│  ├─ spacetime-context-validity.md  # 某些判断在特定背景下成立的时间范围
+│  └─ spacetime-retroactive-edit.md  # 对历史内容进行事后修改时应遵循的边界
 │
-├─ archive/  # 内容如何长期保存、不被搞丢
-│  ├─ archive-backup-policy.md       # 内容要不要备份，多久备份一次，放在哪里
-│  ├─ archive-archival-criteria.md   # 什么情况下，一篇内容应该被封存起来
-│  ├─ archive-status-archive.md      # 被标记为 archive 后，这篇内容意味着什么
-│  ├─ archive-permalink-policy.md    # 固定链接要不要保证长期可用
-│  ├─ archive-original-url.md        # 原始出处链接在什么情况下需要保留
-│  └─ archive-format-migration.md    # 将来换平台或格式时，内容怎么迁移
+├─ archive/  # 与长期保存相关的规则
+│  ├─ archive-backup-policy.md       # 是否需要备份，以及备份的方式和频率
+│  ├─ archive-archival-criteria.md   # 在什么情况下内容应当进入封存状态
+│  ├─ archive-status-archive.md      # 被标记为 archive 后，这篇内容应如何被理解
+│  ├─ archive-permalink-policy.md    # 是否需要为内容提供长期有效的访问地址
+│  ├─ archive-original-url.md        # 是否保留原始出处链接，以及保留的意义
+│  └─ archive-format-migration.md    # 当平台或格式变化时，内容如何迁移
 │
-├─ appendix/  # 示例和补充说明（只用来帮助理解）
-│  ├─ appendix-commit-examples.md    # 提交说明的实际示例
+├─ appendix/  # 用于理解规范的示例和补充说明
+│  ├─ appendix-commit-examples.md    # 各类提交说明的实际写法示例
 │  ├─ appendix-frontmatter-examples.md
-│  │                                  # frontmatter 的完整示例
-│  ├─ appendix-content-examples.md   # 一整篇内容的示例结构
-│  ├─ appendix-migration-notes.md    # 过去调整、迁移时发生过什么
-│  └─ appendix-design-rationale.md   # 当初为什么要这样定规则的解释
+│  │                                  # frontmatter 的完整填写示例
+│  ├─ appendix-content-examples.md   # 一整篇内容从头到尾的结构示例
+│  ├─ appendix-migration-notes.md    # 过去规则或结构调整时的记录说明
+│  └─ appendix-design-rationale.md   # 这些规则背后的设计考虑
 │
-└─ README.md  # 整个规范是干什么的，从这里开始看
+└─ README.md  # 本仓库的整体说明与阅读入口
 ```
+
+
+---
+## index
+
+### gov
+
+- [gov-commit-message.md](gov/gov-commit-message.md)
+- gov-branch-strategy.md
+- gov-pull-request.md
+- gov-review-process.md
+- gov-content-lifecycle.md
+- gov-experimental-work.md
+
+
+### ver
+
+- ver-spec-versioning.md
+- ver-content-versioning.md
+- ver-change-levels.md
+- ver-updated-vs-rewritten.md
+- ver-deprecation.md
+
+
+### content
+
+- content-frontmatter.md
+- content-body-structure.md
+- content-section-semantics.md
+- content-multilang.md
+- content-metadata-optional.md
+
+
+### source
+
+- source-classification.md
+- source-citation-rules.md
+- source-primary-vs-secondary.md
+- source-uncertainty-and-disclaimer.md
+- source-link-rot-and-loss.md
+
+
+### spacetime
+
+- spacetime-datetime-format.md
+- spacetime-timezone.md
+- spacetime-event-time.md
+- spacetime-writing-vs-publish.md
+- spacetime-context-validity.md
+- spacetime-retroactive-edit.md
+
+
+### archive
+
+- archive-backup-policy.md
+- archive-archival-criteria.md
+- archive-status-archive.md
+- archive-permalink-policy.md
+- archive-original-url.md
+- archive-format-migration.md
+
+
+### appendix
+
+- [appendix-commit-message-examples.md](appendix/appendix-commit-message-examples.md)
+- appendix-frontmatter-examples.md
+- appendix-content-examples.md
+- appendix-migration-notes.md
+- appendix-design-rationale.md
+
 
 ---
 ## note
