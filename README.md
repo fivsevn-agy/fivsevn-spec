@@ -98,8 +98,9 @@ fivsevn-spec/
 
 ### content
 
-- content-frontmatter.md
-- content-body-structure.md
+- [`正文前置元信息规范`](content/content-frontmatter.md)
+- [`正文规范`](content/content-body.md)
+- [`正文后置信息规范`](content/content-backmatter.md)
 - content-section-semantics.md
 - content-multilang.md
 - content-metadata-optional.md
