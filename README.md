@@ -79,7 +79,7 @@ fivsevn-spec/
 
 ### gov
 
-- [gov-commit-message.md](gov/gov-commit-message.md)
+- [gov-commit-message.md](gov/gov-commit-message.md) `commit提交规范`
 - gov-branch-strategy.md
 - gov-pull-request.md
 - gov-review-process.md
@@ -112,6 +112,7 @@ fivsevn-spec/
 - source-primary-vs-secondary.md
 - source-uncertainty-and-disclaimer.md
 - source-link-rot-and-loss.md
+- [source-ham-ecosystem.md](source/source-ham-ecosystem.md) `HAM资源汇总`
 
 
 ### spacetime
@@ -136,7 +137,7 @@ fivsevn-spec/
 
 ### appendix
 
-- [appendix-commit-message-examples.md](appendix/appendix-commit-message-examples.md)
+- [appendix-commit-message-examples.md](appendix/appendix-commit-message-examples.md) `commit示例`
 - appendix-frontmatter-examples.md
 - appendix-content-examples.md
 - appendix-migration-notes.md
