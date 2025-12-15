@@ -1,5 +1,5 @@
-# Git提交规范
 # Commit Message Specification
+# Git提交规范
 
 ---
 ## 1. 规范目的
@@ -167,7 +167,8 @@ revert: fix: Correct boolean value for pin field
 ```
 
 
-### 细节提示
+---
+## 4. 细节提示
 
 - 使用英文冒号加空格 `: `
 - 不使用中文冒号 `：`
