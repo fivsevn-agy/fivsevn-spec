@@ -113,8 +113,12 @@ fivsevn-spec/
 - source-primary-vs-secondary.md
 - source-uncertainty-and-disclaimer.md
 - source-link-rot-and-loss.md
-- [`HAM资源汇总`](source/source-ham-ecosystem.md) 
-
+- [`引用规范（APA 7）`](source/source-citation-apa7.md)
+- [`引用规范（MLA 9）`](source/source-citation-mla9.md)
+- [`引用规范（Chicago 17）`](source/source-citation-chicago17.md)
+- [`引用规范（GB/T 7714-2015）`](source/source-citation-gbt7714-2015.md)
+- [`HAM资源汇总`](source/source-ham-ecosystem.md)
+- [`参考来源暂存`](source/source-reference-pool.md)
 
 ### spacetime
 
