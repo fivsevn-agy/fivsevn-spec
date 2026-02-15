@@ -58,12 +58,17 @@ fivsevn-spec/
 - ❌ ~~写作风格~~
 ```
 
+- [`新闻聚合工具（News Aggregators）`](source/source-news-aggregators.md)
+- [`主流媒体（Mainstream Media）`](source/source-mainstream-media.md)
+- [`科学与研究（Science）`](source/source-science.md)
+- [`人文学科（Humanities）`](source/source-humanities.md)
+- [`HAM资源汇总`](source/source-ham-ecosystem.md)
+- [`参考来源暂存`](source/source-reference-pool.md)
 - [`引用规范（APA 7）`](source/source-citation-apa7.md)
 - [`引用规范（MLA 9）`](source/source-citation-mla9.md)
 - [`引用规范（Chicago 17）`](source/source-citation-chicago17.md)
 - [`引用规范（GB/T 7714-2015）`](source/source-citation-gbt7714-2015.md)
-- [`HAM资源汇总`](source/source-ham-ecosystem.md)
-- [`参考来源暂存`](source/source-reference-pool.md)
+- [`使用手册（Manual）`](source/source-manual.md)
 
 
 ### spacetime
