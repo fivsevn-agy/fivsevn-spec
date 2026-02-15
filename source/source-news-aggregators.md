@@ -54,7 +54,7 @@
 
 - [Hacker News](https://news.ycombinator.com/)
 - [hckr news](https://hckrnews.com)
-- [hackertab.dev](https://now.hackertab.dev/）
+- [hackertab](https://now.hackertab.dev)
 - [HelloGitHub](https://hellogithub.com)
 - [Product Hunt](https://www.producthunt.com)
 - [Techmeme](https://www.techmeme.com/)
