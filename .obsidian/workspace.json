@@ -1,0 +1,192 @@
+{
+  "main": {
+    "id": "028eedbf083b094e",
+    "type": "split",
+    "children": [
+      {
+        "id": "71e4c0c212cc3358",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d7539d44f573c6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "spacetime/spacetime-datetime-format.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "spacetime-datetime-format"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "52a6d1ac2e9ecace",
+    "type": "split",
+    "children": [
+      {
+        "id": "7861040a0c094989",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "82d772a1c74fdc0c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "0625cca442b4c8e1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "c68fc9d32008d52f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b3db7e08e9789f1b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0bdb761038d70666",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02d70586040f59d9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "spacetime/spacetime-datetime-format.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "spacetime-datetime-format 的反向链接列表"
+            }
+          },
+          {
+            "id": "11a18f54f417fa91",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "spacetime/spacetime-datetime-format.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "spacetime-datetime-format 的出链列表"
+            }
+          },
+          {
+            "id": "fb1a8efbd55ddd1d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3c6bcbade1b13aea",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b6ee9efe969f937f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "spacetime/spacetime-datetime-format.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "spacetime-datetime-format 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false
+    }
+  },
+  "active": "3d7539d44f573c6d",
+  "lastOpenFiles": [
+    "spacetime/spacetime-datetime-evidence.md",
+    "spacetime/spacetime-datetime-format.md",
+    "README.md"
+  ]
+}
