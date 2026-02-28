@@ -1,4 +1,35 @@
 ---
+id: 
+title: 
+
+module: system / natsci / netcom / posts / blogops / narrative
+submodule: 
+topic: 
+
+type: note / article / index / log / spec / release
+status: draft / active / archived
+canonical: true / false
+
+summary: >
+
+parents: []
+related: []
+tags: []
+
+audience: self / public / tutorial / collaborator
+languages: zh / en / jp
+maturity: draft / evolving / stable / deprecated
+confidence: 0.0
+visibility: public / private
+source_of_truth: devlog / site / spec / internal
+
+created: 
+updated: 
+---
+## meta
+
+```yaml
+---
 id: module-submodule-topic-001   # 全仓唯一主键，不随文件名变化
 
 title: 标题                         # 给人读的标题
@@ -31,3 +62,4 @@ source_of_truth: devlog           # 权威来源（devlog / site / other）
 created: 2026-01-01               # 创建日期（YYYY-MM-DD）
 updated: 2026-01-01               # 最近修改日期
 ---
+```

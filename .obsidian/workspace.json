@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gov/gov-meta-enums.md",
+                "file": "content/content-frontmatter.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "gov-meta-enums"
+              "title": "content-frontmatter"
             }
           }
         ]
@@ -185,19 +185,35 @@
   },
   "active": "3d7539d44f573c6d",
   "lastOpenFiles": [
+    "content/content-backmatter.md",
+    "_legacy/commit-message-spec-pre.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-zibaldone.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-soapbox.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-magneticpoetry.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-fireside.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-02body.md",
+    "_legacy/legacy-tmpl/tmpl-fivsevn-00postsample202511.md",
+    "_legacy/markdown-format-guide.md",
+    "_legacy/README.md",
+    "_legacy/ref-apa-gbt-example-pre.md",
+    "_legacy/source-ham-ecosystem-pre.md",
+    "_legacy/spacetime-datetime-format-pre.md",
+    "appendix/appendix-commit-message-examples.md",
     "gov/gov-meta-frontmatter.md",
-    "gov/gov-commit-message.md",
+    "content/content-frontmatter.md",
+    "content/content-body.md",
     "gov/gov-meta-enums.md",
-    "README.md",
+    "gov/gov-commit-message.md",
+    "source/source-science.md",
+    "source/source-reference-pool.md",
+    "source/source-news-aggregators.md",
+    "source/source-manual.md",
+    "source/source-mainstream-media.md",
+    "source/source-humanities.md",
+    "source/source-ham-ecosystem.md",
     "meta/meta-frontmatter.yaml",
     "meta-frontmatter.yaml",
-    "enums.md",
-    "content/content-backmatter.md",
     "meta",
-    "untitled folder",
-    "content/content-body.md",
-    "content/content-frontmatter.md",
-    "spacetime/spacetime-datetime-format.md",
-    "spacetime/spacetime-datetime-evidence.md"
+    "untitled folder"
   ]
 }
