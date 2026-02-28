@@ -1,5 +1,5 @@
 ---
-module: spec
+module: system
 type: note
 status: archived
 canonical: false
