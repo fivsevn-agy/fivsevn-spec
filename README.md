@@ -25,6 +25,8 @@ fivsevn-spec/
 > ⭕️ 做事时需要遵循的流程和规则。保证行为一致、过程可复现。  
 > ❌ ~~内容本身的表达~~
 
+- [`元数据模版`](gov/gov-meta-frontmatter.md) 
+- [`元数据枚举规范`](gov/gov-meta-enums.md)
 - [`commit提交规范`](gov/gov-commit-message.md) 
 
 
@@ -87,4 +89,5 @@ fivsevn-spec/
 > ❌ ~~约束性规则~~
 
 - [`commit示例`](appendix/appendix-commit-message-examples.md) 
+
 

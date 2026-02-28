@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "spacetime/spacetime-datetime-format.md",
-                "mode": "preview",
+                "file": "gov/gov-meta-enums.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "spacetime-datetime-format"
+              "title": "gov-meta-enums"
             }
           }
         ]
@@ -185,8 +185,19 @@
   },
   "active": "3d7539d44f573c6d",
   "lastOpenFiles": [
-    "spacetime/spacetime-datetime-evidence.md",
+    "gov/gov-meta-frontmatter.md",
+    "gov/gov-commit-message.md",
+    "gov/gov-meta-enums.md",
+    "README.md",
+    "meta/meta-frontmatter.yaml",
+    "meta-frontmatter.yaml",
+    "enums.md",
+    "content/content-backmatter.md",
+    "meta",
+    "untitled folder",
+    "content/content-body.md",
+    "content/content-frontmatter.md",
     "spacetime/spacetime-datetime-format.md",
-    "README.md"
+    "spacetime/spacetime-datetime-evidence.md"
   ]
 }
