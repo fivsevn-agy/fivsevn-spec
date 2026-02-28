@@ -1,32 +1,37 @@
 ---
-id: 
-title: 
+id: system-gov-meta-frontmatter-001
+title: Frontmatter Metadata Template
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: governance
+topic: metadata-template
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: spec
+status: active
+canonical: true
 
 summary: >
+  定义所有文档 YAML 头部字段结构与使用说明，
+  作为仓库统一的元数据模板。
 
 parents: []
-related: []
-tags: []
+related: [
+  system-gov-meta-enums-001,
+  system-gov-commit-message-001
+]
+tags: [system, governance, metadata, template]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: collaborator
+languages: zh
+maturity: stable
+confidence: 1.00
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
-## meta
+## Frontmatter Template
 
 ```yaml
 ---

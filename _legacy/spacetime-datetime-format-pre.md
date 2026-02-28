@@ -33,7 +33,7 @@ updated: 2026-01-01               # 最近修改日期
 ---
 > Status: legacy  
 > Validity: expired  
-> Replaced by: [spacetime-datetime-format.md](../spacetime/spacetime-datetime-format.md) & [spacetime-datetime-evidence.md](../spacetime/spacetime-datetime-evidence.md) 
+> Replaced by: [spacetime-datetime-format.md](../spacetime/system-spec-datetime-format-001.md) & [spacetime-datetime-evidence.md](../spacetime/system-spec-datetime-evidence-001.md) 
 > Note: retained for historical reference only
 
 ---

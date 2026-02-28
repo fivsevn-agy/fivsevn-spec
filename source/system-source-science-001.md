@@ -1,30 +1,31 @@
 ---
-id: 
-title: 
+id: system-source-science-001
+title: Science & Research Index
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: science-index
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  从顶级学术期刊到科普媒体的科学信息源分层索引。
 
-parents: []
+parents: [system-source-reference-pool-001]
 related: []
-tags: []
+tags: [system, source, science]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: stable
+confidence: 0.97
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 *过去存档+AI建议，尚未整理。
 

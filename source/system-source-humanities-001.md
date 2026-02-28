@@ -1,30 +1,31 @@
 ---
-id: 
-title: 
+id: system-source-humanities-001
+title: Humanities Reference Index
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: humanities-index
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  人文学科相关期刊、研究平台与思想媒体的结构化索引。
 
-parents: []
+parents: [system-source-reference-pool-001]
 related: []
-tags: []
+tags: [system, source, humanities]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: evolving
+confidence: 0.95
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 *过去存档+AI建议，尚未整理。
 

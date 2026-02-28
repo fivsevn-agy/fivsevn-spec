@@ -1,30 +1,32 @@
 ---
-id: 
-title: 
+id: system-gov-commit-message-001
+title: Commit Message Specification
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: governance
+topic: git-commit-standard
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: spec
+status: active
+canonical: true
 
 summary: >
+  定义 Git 提交信息的结构规则与前缀语义，
+  规范提交历史的可读性与可追溯性。
 
-parents: []
-related: []
-tags: []
+parents: [system-gov-meta-frontmatter-001]
+related: [system-gov-meta-enums-001]
+tags: [system, governance, git, commit]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: collaborator
+languages: zh
+maturity: stable
+confidence: 0.99
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 # Commit Message Specification
 # Git提交规范

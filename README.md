@@ -1,30 +1,33 @@
 ---
-id: 
-title: 
+id: spec-index
+title: fivsevn Specification Index
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: spec
+topic: writing-governance
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  定义 fivsevn 内容系统的规范层。
+  包含 frontmatter 结构、版本语义、引用标准、
+  时间语义与归档规则。作为所有内容生产与解析的结构依据。
 
 parents: []
 related: []
-tags: []
+tags: [spec, governance, metadata, versioning, citation, archive]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: self
+languages: zh
+maturity: evolving
+confidence: 0.95
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2026-02-15
+updated: 2026-03-01
 ---
 # fivsevn-spec
 
@@ -53,9 +56,9 @@ fivsevn-spec/
 > ⭕️ 做事时需要遵循的流程和规则。保证行为一致、过程可复现。  
 > ❌ ~~内容本身的表达~~
 
-- [`元数据模版`](gov/gov-meta-frontmatter.md) 
-- [`元数据枚举规范`](gov/gov-meta-enums.md)
-- [`commit提交规范`](gov/gov-commit-message.md) 
+- [`元数据模版`](gov/system-gov-meta-frontmatter-001.md) 
+- [`元数据枚举规范`](gov/system-gov-meta-enums-001.md)
+- [`commit提交规范`](gov/system-gov-commit-message-001.md) 
 
 
 ### ver
@@ -81,17 +84,17 @@ fivsevn-spec/
 > ⭕️ 信息来源与证据。明确可信度。  
 > ❌ ~~写作风格~~
 
-- [`新闻聚合工具（News Aggregators）`](source/source-news-aggregators.md)
-- [`主流媒体（Mainstream Media）`](source/source-mainstream-media.md)
-- [`科学与研究（Science）`](source/source-science.md)
-- [`人文学科（Humanities）`](source/source-humanities.md)
-- [`HAM资源汇总`](source/source-ham-ecosystem.md)
-- [`参考来源暂存`](source/source-reference-pool.md)
-- [`引用规范（APA 7）`](source/source-citation-apa7.md)
-- [`引用规范（MLA 9）`](source/source-citation-mla9.md)
-- [`引用规范（Chicago 17）`](source/source-citation-chicago17.md)
-- [`引用规范（GB/T 7714-2015）`](source/source-citation-gbt7714-2015.md)
-- [`使用手册（Manual）`](source/source-manual.md)
+- [`新闻聚合工具（News Aggregators）`](source/system-source-news-aggregators-001.md)
+- [`主流媒体（Mainstream Media）`](source/system-source-mainstream-media-001.md)
+- [`科学与研究（Science）`](source/system-source-science-001.md)
+- [`人文学科（Humanities）`](source/system-source-humanities-001.md)
+- [`HAM资源汇总`](source/system-source-ham-ecosystem-001.md)
+- [`参考来源暂存`](source/system-source-reference-pool-001.md)
+- [`引用规范（APA 7）`](source/system-source-citation-apa7-001.md)
+- [`引用规范（MLA 9）`](source/system-source-citation-mla9-001.md)
+- [`引用规范（Chicago 17）`](source/system-source-citation-chicago17-001.md)
+- [`引用规范（GB/T 7714-2015）`](source/system-source-citation-gbt7714-2015-001.md)
+- [`使用手册（Manual）`](source/system-source-manual-001.md)
 
 
 ### spacetime
@@ -99,8 +102,8 @@ fivsevn-spec/
 > ⭕️ 时间、地点、语境。防止语义随时间失真。  
 > ❌ ~~事件本身对错~~
 
-- [`日期与时间书写规范`](spacetime/spacetime-datetime-format.md)
-- [`时间戳的证据与严格使用规范`](spacetime/spacetime-datetime-evidence.md)
+- [`日期与时间书写规范`](spacetime/system-spec-datetime-format-001.md)
+- [`时间戳的证据与严格使用规范`](spacetime/system-spec-datetime-evidence-001.md)
 
 
 ### archive
@@ -116,6 +119,6 @@ fivsevn-spec/
 > ⭕️ 示例与说明。可以用来辅助理解规则。  
 > ❌ ~~约束性规则~~
 
-- [`commit示例`](appendix/appendix-commit-message-examples.md) 
+- [`commit示例`](appendix/system-gov-commit-message-examples-001.md) 
 
 

@@ -33,7 +33,7 @@ updated: 2026-01-01               # 最近修改日期
 ---
 > Status: legacy  
 > Validity: expired  
-> Replaced by: [source-ham-ecosystem.md](../source/source-ham-ecosystem.md)  
+> Replaced by: [source-ham-ecosystem.md](../source/system-source-ham-ecosystem-001.md)  
 > Note: retained for historical reference only
 
 ---

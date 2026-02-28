@@ -1,30 +1,32 @@
 ---
-id: 
-title: 
+id: system-source-reference-pool-001
+title: Source Reference Pool
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: reference-pool
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  潜在信息来源与资料站点的暂存池，
+  用于后续筛选与结构化整理。
 
 parents: []
 related: []
-tags: []
+tags: [system, source, pool]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: self
+languages: zh
+maturity: evolving
+confidence: 0.92
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 # Source Reference Pool
 # 参考来源暂存

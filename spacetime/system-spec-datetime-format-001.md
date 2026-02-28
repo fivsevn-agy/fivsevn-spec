@@ -1,30 +1,33 @@
 ---
-id: 
-title: 
+id: system-spec-datetime-format-001
+title: Date and Time Format Specification
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: spec
+topic: datetime-format
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: spec
+status: active
+canonical: true
 
 summary: >
+  定义三层时间书写规范：
+  个人记录、文档命名与严格时间戳。
+  明确各层用途边界，避免跨层级滥用。
 
-parents: []
-related: []
-tags: []
+parents: [spec-index]
+related: [system-spec-datetime-evidence-001]
+tags: [system, spec, datetime, format]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: stable
+confidence: 0.99
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2025-12-13
+updated: 2026-03-01
 ---
 # Date and Time Format Specification
 # 日期与时间书写规范

@@ -33,7 +33,7 @@ updated: 2026-01-01               # 最近修改日期
 ---
 > Status: legacy  
 > Validity: expired  
-> Replaced by: [gov-commit-message.md](../gov/gov-commit-message.md)
+> Replaced by: [gov-commit-message.md](../gov/system-gov-commit-message-001.md)
 > Note: retained for historical reference only
 
 ---

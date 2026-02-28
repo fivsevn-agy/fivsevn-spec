@@ -1,30 +1,31 @@
 ---
-id: 
-title: 
+id: system-source-citation-gbt7714-2015-001
+title: GB/T 7714—2015 Citation Format (Informative)
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: citation-gbt7714
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  中国国家标准 GB/T 7714—2015 引用格式的来源说明与获取路径索引。
 
-parents: []
-related: []
-tags: []
+parents: [system-source-reference-pool-001]
+related: [system-source-citation-apa7-001]
+tags: [system, source, citation, gbt]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: stable
+confidence: 0.97
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 # GB/T 7714-2015 Citation Format (Informative)
 # GB/T 7714—2015 引用格式参考

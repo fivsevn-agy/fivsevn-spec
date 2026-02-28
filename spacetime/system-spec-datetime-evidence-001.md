@@ -1,30 +1,33 @@
 ---
-id: 
-title: 
+id: system-spec-datetime-evidence-001
+title: Datetime Evidence Specification
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: spec
+topic: datetime-evidence
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: spec
+status: active
+canonical: true
 
 summary: >
+  定义严格语境下时间戳的使用原则，
+  明确唯一性、时区要求与证据边界，
+  规范时间在核验与合规场景中的使用方式。
 
-parents: []
-related: []
-tags: []
+parents: [spec-index]
+related: [system-spec-datetime-format-001]
+tags: [system, spec, datetime, compliance]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: stable
+confidence: 0.99
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2025-04-09
+updated: 2026-03-01
 ---
 # Datetime Evidence Specification
 # 时间戳的证据与严格使用规范  

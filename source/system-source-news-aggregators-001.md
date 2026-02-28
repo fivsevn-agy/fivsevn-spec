@@ -1,31 +1,33 @@
 ---
-id: 
-title: 
+id: system-source-news-aggregators-001
+title: News Aggregators Index
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: news-aggregators
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  新闻聚合工具与信息入口的结构化索引。
 
-parents: []
-related: []
-tags: []
+parents: [system-source-reference-pool-001]
+related: [system-source-mainstream-media-001]
+tags: [system, source, news, aggregators]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: stable
+confidence: 0.96
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
+
 ## News Aggregators（新闻聚合工具 / 信息入口）
 
 > 每日浏览入口

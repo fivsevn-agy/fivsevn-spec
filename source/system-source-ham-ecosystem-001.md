@@ -1,30 +1,31 @@
 ---
-id: 
-title: 
+id: system-source-ham-ecosystem-001
+title: HAM Radio Ecosystem
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: source
+topic: ham-ecosystem
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: index
+status: active
+canonical: true
 
 summary: >
+  业余无线电相关组织、网络、协议、软件与考试体系的结构化索引。
 
-parents: []
-related: []
-tags: []
+parents: [system-source-reference-pool-001]
+related: [netcom-lora-meshtastic-layered-model-001]
+tags: [system, source, ham, radio]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: public
+languages: zh
+maturity: evolving
+confidence: 0.96
+visibility: public
+source_of_truth: site
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 # HAM Radio Ecosystem
 # 业余无线电 信息源索引

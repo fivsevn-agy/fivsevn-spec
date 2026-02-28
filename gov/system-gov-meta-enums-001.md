@@ -1,30 +1,32 @@
 ---
-id: 
-title: 
+id: system-gov-meta-enums-001
+title: Metadata Enumerations
 
-module: system / natsci / netcom / posts / blogops / narrative
-submodule: 
-topic: 
+module: system
+submodule: governance
+topic: metadata-enumeration
 
-type: note / article / index / log / spec / release
-status: draft / active / archived
-canonical: true / false
+type: spec
+status: active
+canonical: true
 
 summary: >
+  定义 YAML 元数据中允许使用的枚举值集合，
+  防止语义漂移与重复字段扩散。
 
-parents: []
-related: []
-tags: []
+parents: [system-gov-meta-frontmatter-001]
+related: [system-gov-commit-message-001]
+tags: [system, governance, metadata, enums]
 
-audience: self / public / tutorial / collaborator
-languages: zh / en / jp
-maturity: draft / evolving / stable / deprecated
-confidence: 0.0
-visibility: public / private
-source_of_truth: devlog / site / spec / internal
+audience: collaborator
+languages: zh
+maturity: stable
+confidence: 1.00
+visibility: public
+source_of_truth: spec
 
-created: 
-updated: 
+created: 2026-03-01
+updated: 2026-03-01
 ---
 # Metadata Enumerations
 # 元数据枚举规范
