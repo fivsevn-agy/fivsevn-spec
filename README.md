@@ -121,10 +121,3 @@ fivsevn-spec/
 
 - [`commit示例`](appendix/system-gov-commit-message-examples-001.md) 
 
-
-### map
-
-> ⭕️ 系统结构拓扑与模块轴线。  
-> ❌ ~~具体内容规则~~
-
-- [`模块拓扑图`](map/system-module-map-001.md)
