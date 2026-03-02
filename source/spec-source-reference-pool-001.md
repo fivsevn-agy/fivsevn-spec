@@ -1,8 +1,8 @@
 ---
-id: system-source-reference-pool-001
+id: spec-source-reference-pool-001
 title: Source Reference Pool
 
-module: system
+module: spec
 submodule: source
 topic: reference-pool
 

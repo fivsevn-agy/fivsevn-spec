@@ -1,8 +1,8 @@
 ---
-id: system-source-citation-apa7-001
+id: spec-source-citation-apa7-001
 title: APA 7 Citation Format (Informative)
 
-module: system
+module: spec
 submodule: source
 topic: citation-apa7
 

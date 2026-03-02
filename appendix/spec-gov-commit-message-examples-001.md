@@ -1,5 +1,5 @@
 ---
-id: system-gov-commit-message-examples-001
+id: spec-gov-commit-message-examples-001
 title: Commit Message Examples
 
 module: system

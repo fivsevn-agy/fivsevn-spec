@@ -1,9 +1,9 @@
 ---
-id: system-spec-datetime-evidence-001
+id: spec-datetime-evidence-001
 title: Datetime Evidence Specification
 
-module: system
-submodule: spec
+module: spec
+submodule: spacetime
 topic: datetime-evidence
 
 type: spec

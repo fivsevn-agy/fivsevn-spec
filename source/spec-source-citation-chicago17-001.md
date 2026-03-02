@@ -1,8 +1,8 @@
 ---
-id: system-source-citation-chicago17-001
+id: spec-source-citation-chicago17-001
 title: Chicago 17 Citation Format (Informative)
 
-module: system
+module: spec
 submodule: source
 topic: citation-chicago17
 

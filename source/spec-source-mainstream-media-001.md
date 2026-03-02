@@ -1,8 +1,8 @@
 ---
-id: system-source-mainstream-media-001
+id: spec-source-mainstream-media-001
 title: Mainstream Media Index
 
-module: system
+module: spec
 submodule: source
 topic: mainstream-media
 

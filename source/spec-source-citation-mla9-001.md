@@ -1,8 +1,8 @@
 ---
-id: system-source-citation-mla9-001
+id: spec-source-citation-mla9-001
 title: MLA 9 Citation Format (Informative)
 
-module: system
+module: spec
 submodule: source
 topic: citation-mla9
 

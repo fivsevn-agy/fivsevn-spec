@@ -1,8 +1,8 @@
 ---
-id: system-source-news-aggregators-001
+id: spec-source-news-aggregators-001
 title: News Aggregators Index
 
-module: system
+module: spec
 submodule: source
 topic: news-aggregators
 

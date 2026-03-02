@@ -1,8 +1,8 @@
 ---
-id: system-gov-meta-frontmatter-001
+id: spec-gov-meta-frontmatter-001
 title: Frontmatter Metadata Template
 
-module: system
+module: spec
 submodule: governance
 topic: metadata-template
 

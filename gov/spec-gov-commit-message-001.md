@@ -1,8 +1,8 @@
 ---
-id: system-gov-commit-message-001
+id: spec-gov-commit-message-001
 title: Commit Message Specification
 
-module: system
+module: spec
 submodule: governance
 topic: git-commit-standard
 

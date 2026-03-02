@@ -1,8 +1,8 @@
 ---
-id: system-spec-module-map-001
+id: spec-module-map-001
 title: Module Map - spec
 
-module: system
+module: spec
 submodule: topology
 topic: structural-axes
 

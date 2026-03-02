@@ -1,8 +1,8 @@
 ---
-id: system-gov-meta-enums-001
+id: spec-gov-meta-enums-001
 title: Metadata Enumerations
 
-module: system
+module: spec
 submodule: governance
 topic: metadata-enumeration
 

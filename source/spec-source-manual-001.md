@@ -1,8 +1,8 @@
 ---
-id: system-source-manual-001
+id: spec-source-manual-001
 title: Manuals Index
 
-module: system
+module: spec
 submodule: source
 topic: manuals
 

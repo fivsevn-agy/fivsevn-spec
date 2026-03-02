@@ -1,9 +1,9 @@
 ---
-id: system-spec-datetime-format-001
+id: spec-datetime-format-001
 title: Date and Time Format Specification
 
-module: system
-submodule: spec
+module: spec
+submodule: spacetime
 topic: datetime-format
 
 type: spec

@@ -1,8 +1,8 @@
 ---
-id: system-source-humanities-001
+id: spec-source-humanities-001
 title: Humanities Reference Index
 
-module: system
+module: spec
 submodule: source
 topic: humanities-index
 

@@ -1,8 +1,8 @@
 ---
-id: system-source-citation-gbt7714-2015-001
+id: spec-source-citation-gbt7714-2015-001
 title: GB/T 7714—2015 Citation Format (Informative)
 
-module: system
+module: spec
 submodule: source
 topic: citation-gbt7714
 

@@ -1,8 +1,8 @@
 ---
-id: system-source-science-001
+id: spec-source-science-001
 title: Science & Research Index
 
-module: system
+module: spec
 submodule: source
 topic: science-index
 

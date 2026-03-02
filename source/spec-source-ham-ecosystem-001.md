@@ -1,8 +1,8 @@
 ---
-id: system-source-ham-ecosystem-001
+id: spec-source-ham-ecosystem-001
 title: HAM Radio Ecosystem
 
-module: system
+module: spec
 submodule: source
 topic: ham-ecosystem
 
