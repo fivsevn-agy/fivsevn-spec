@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "legacy/legacy-tmpl-fivsevn-zibaldone.md",
+                "file": "system/module-map.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "legacy-tmpl-fivsevn-zibaldone"
+              "title": "module-map"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "3d7539d44f573c6d",
   "lastOpenFiles": [
+    "spacetime/system-spec-datetime-evidence-001.md",
+    "legacy/legacy-tmpl-fivsevn-zibaldone.md",
     "legacy/legacy-tmpl-fivsevn-soapbox.md",
     "legacy/legacy-tmpl-fivsevn-magneticpoetry.md",
     "legacy/legacy-tmpl-fivsevn-fireside.md",
@@ -196,13 +198,11 @@
     "source/system-source-citation-apa7-001.md",
     "legacy/legacy-markdown-format-guide.md",
     "legacy/legacy-commit-message-spec-pre.md",
-    "spacetime/system-spec-datetime-evidence-001.md",
     "gov/system-gov-commit-message-001.md",
     "gov/system-gov-meta-enums-001.md",
     "README.md",
     "appendix/system-gov-commit-message-examples-001.md",
     "legacy/README.md",
-    "legacy/legacy-tmpl-fivsevn-zibaldone.md",
     "content/content-backmatter.md",
     "content/content-body.md",
     "content/content-frontmatter.md",

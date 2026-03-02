@@ -30,7 +30,7 @@ created: 2026-03-01
 updated: 2026-03-01
 ---
 
-# Module Topology Map
+# Module Map - spec
 
 fivsevn-spec 由以下语义轴线构成：
 
