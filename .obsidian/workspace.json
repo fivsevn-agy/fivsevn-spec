@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gov/spec-gov-terminology-001.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "spec-gov-terminology-001"
+              "title": "README"
             }
           }
         ]
@@ -185,8 +185,8 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "gov/spec-gov-meta-frontmatter-001.md",
     "gov/spec-gov-terminology-001.md",
+    "gov/spec-gov-meta-frontmatter-001.md",
     "gov/spec-gov-meta-enums-001.md",
     "gov/spec-gov-commit-message-001.md",
     "appendix/spec-gov-commit-message-examples-001.md",
