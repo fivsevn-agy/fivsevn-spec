@@ -68,3 +68,13 @@ created: 2026-01-01               # 创建日期（YYYY-MM-DD）
 updated: 2026-01-01               # 最近修改日期
 ---
 ```
+- 翻译的文章可将source_of_truth标记为translation，并在下方加上以下字段。其他部分不变。
+
+```yaml
+original_title: 原标题
+original_source: 原网址
+original_publisher: 原作者等
+translation_note: >
+  本文为原文内容的中文翻译，仅用于学习与知识整理。
+  所有版权归原作者及出版方所有。
+``` 
