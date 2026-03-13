@@ -43,7 +43,7 @@ module: module-name               # 一级模块（natsci / netcom / posts / blo
 submodule: submodule-name         # 二级分类（如 rf / lora / taxonomy）
 topic: specific-topic             # 具体对象或主题（如 meshtastic / coleoptera）
 
-type: note                        # 内容类型（note / article / index / log / spec / release 等）
+type: note                        # 内容类型（note / article / index / log / spec / release / translation等）
 status: active                    # 当前状态（draft / active / archived）
 canonical: true                   # 是否权威版本
 
@@ -62,7 +62,7 @@ maturity: evolving                # 认知成熟度（draft / evolving / stable 
 confidence: 0.70                  # 主观确定度（0–1）
 
 visibility: public                # 可见性（public / private）
-source_of_truth: devlog           # 权威来源（devlog / site / other）
+source_of_truth: devlog           # 权威来源（devlog / site / other / translation）
 
 created: 2026-01-01               # 创建日期（YYYY-MM-DD）
 updated: 2026-01-01               # 最近修改日期
