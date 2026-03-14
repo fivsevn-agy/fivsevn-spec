@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "source/spec-source-science-001.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "spec-source-science-001"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
+    "source/spec-source-citation-apa7-001.md",
+    "README.md",
     "gov/spec-gov-terminology-001.md",
     "gov/spec-gov-meta-frontmatter-001.md",
     "gov/spec-gov-meta-enums-001.md",
@@ -193,11 +195,9 @@
     "content/content-body.md",
     "content/content-backmatter.md",
     "content/content-frontmatter.md",
-    "README.md",
     "system/module-map.md",
     "spacetime/spec-datetime-format-001.md",
     "spacetime/spec-datetime-evidence-001.md",
-    "source/spec-source-citation-apa7-001.md",
     "source/spec-source-citation-chicago17-001.md",
     "source/spec-source-citation-gbt7714-2015-001.md",
     "source/spec-source-citation-mla9-001.md",
