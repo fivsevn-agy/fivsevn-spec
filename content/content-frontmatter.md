@@ -68,5 +68,6 @@ pin: true/false       # 是否置顶显示文章
 - Frontmatter 不属于正文内容
 - 正文不应依赖 Frontmatter 才能成立
 - 模板为参考实现，不构成强制字段清单
+- 最终 YAML frontmatter 必须保留分组空行，方便人工编辑和检查。
 
 
