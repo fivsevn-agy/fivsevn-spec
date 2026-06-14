@@ -29,7 +29,7 @@ source_of_truth: spec
 created: 2026-02-15
 updated: 2026-03-01
 ---
-# fivsevn-spec
+# fivsevn-spec（⚠️ 施工中）
 
 - This repository defines the normative specifications governing content production, versioning, provenance, spacetime semantics, and archival practices within the fivsevn ecosystem.
 
@@ -56,8 +56,6 @@ fivsevn-spec/
 > ⭕️ 做事时需要遵循的流程和规则。保证行为一致、过程可复现。  
 > ❌ ~~内容本身的表达~~
 
-- [`元数据模版`](gov/spec-gov-meta-frontmatter-001.md) 
-- [`元数据枚举规范`](gov/spec-gov-meta-enums-001.md)
 - [`commit提交规范`](gov/spec-gov-commit-message-001.md) 
 
 
@@ -69,10 +67,13 @@ fivsevn-spec/
 - [`xxx`](xxx/xxx-xxx-xxx.md) 
 
 
-### content
+### content（施工中）
 
 > ⭕️ 内容本身的组织方式。保证内容可解析、可迁移。  
 > ❌ ~~观点质量与深度~~
+
+- [`元数据模版`](content/spec-content-meta-frontmatter-001.md) 
+- [`元数据枚举规范`](content/spec-content-meta-enums-001.md)
 
 - [`正文前置元信息规范`](content/content-frontmatter.md)
 - [`正文规范`](content/content-body.md)
