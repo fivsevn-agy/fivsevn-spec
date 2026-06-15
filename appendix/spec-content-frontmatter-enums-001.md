@@ -320,7 +320,7 @@ source_of_truth:
   - spec         # 以 fivsevn-spec 规范仓库为准
   - site         # 以站点展示版本为准
   - translation  # 以翻译关系及原文材料为依据
-  - external     # 以外部来源为准
+  - external     # 以外部来源为准；也可用于自己发布在 WordPress、个人博客等外部平台的原创内容
 ```
 
 常用写法：
@@ -335,13 +335,15 @@ source_of_truth: spec         # 规范内容
 
 ## 13. 翻译扩展字段
 
-当且仅当：
+以下字段主要在翻译内容中使用。
+
+当使用：
 
 ```yaml
 type: translation
 ```
 
-时，使用以下字段。
+时，应使用以下字段。对于外链原创内容，也可单独使用 `original_source` 与 `original_url` 记录外部原始发布位置。
 
 ```yaml
 translation_fields:
@@ -357,6 +359,15 @@ translation_fields:
 ```yaml
 type: translation
 source_of_truth: translation
+```
+
+外链原创内容推荐组合：
+
+```yaml
+type: article
+source_of_truth: external
+original_source: WordPress
+original_url: https://fivsevn.home.blog/example-post/
 ```
 
 ---

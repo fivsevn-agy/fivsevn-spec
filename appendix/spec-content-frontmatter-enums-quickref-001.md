@@ -135,7 +135,7 @@ source_of_truth:
   - spec         # 以 fivsevn-spec 规范仓库为准
   - site         # 以站点展示版本为准
   - translation  # 以翻译关系及原文材料为依据
-  - external     # 以外部来源为准
+  - external     # 以外部来源为准；也可用于自己发布在 WordPress、个人博客等外部平台的原创内容
 
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
@@ -267,7 +267,7 @@ source_of_truth:
   - devlog       # 以 fivsevn-devlog 内容仓库为准
   - spec         # 以 fivsevn-spec 规范仓库为准
   - site         # 以站点展示版本为准
-  - external     # 以外部来源为准
+  - external     # 以外部来源为准；也可用于自己发布在 WordPress、个人博客等外部平台的原创内容
 
 original_title:      # 原文标题
 original_source:     # 原文来源名称
@@ -282,7 +282,51 @@ updated: YYYY-MM-DD
 
 ---
 
-## 3. 最常用默认值
+## 3. 外链原创内容常用默认值
+
+适用于自己写作、但原始发布位置在 WordPress、个人博客或其他外部平台的内容。
+
+```yaml
+---
+id: posts-2025-topic-001
+title: 标题
+
+module: posts
+submodule: 2025
+topic: specific-topic
+
+type: article
+status: active
+canonical: true
+
+summary: >
+  摘要
+
+parents: []
+related: []
+
+tags: []
+
+audience: [self, public]
+languages: [zh]
+
+maturity: stable
+confidence: 0.9
+
+visibility: public
+source_of_truth: external
+
+original_source: WordPress
+original_url: https://fivsevn.home.blog/example-post/
+
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+```
+
+---
+
+## 4. 最常用默认值
 
 ```yaml
 ---
@@ -321,7 +365,7 @@ updated: YYYY-MM-DD
 
 ---
 
-## 4. 翻译内容常用默认值
+## 5. 翻译内容常用默认值
 
 ```yaml
 ---

@@ -42,19 +42,23 @@
   - [`original_publisher`](#original_publisher)
   - [`original_url`](#original_url)
   - [`translation_note`](#translation_note)
-- [14. 时间字段](#14-时间字段)
+- [14. 外链原创内容字段](#14-外链原创内容字段)
+  - [14.1 适用场景](#141-适用场景)
+  - [14.2 推荐写法](#142-推荐写法)
+- [15. 时间字段](#15-时间字段)
   - [`created`](#created)
   - [`updated`](#updated)
-- [15. 字段使用规则](#15-字段使用规则)
-  - [15.1 核心字段应保持完整](#151-核心字段应保持完整)
-  - [15.2 字段组之间保留空行](#152-字段组之间保留空行)
-  - [15.3 数组字段统一使用数组写法](#153-数组字段统一使用数组写法)
-  - [15.4 空数组与空字段的区别](#154-空数组与空字段的区别)
-  - [15.5 `status` 与 `visibility` 不应混淆](#155-status-与-visibility-不应混淆)
-  - [15.6 `type: translation` 的额外要求](#156-type-translation-的额外要求)
-  - [15.7 日期字段只使用 `created` 和 `updated`](#157-日期字段只使用-created-和-updated)
-- [16. 与枚举文件的关系](#16-与枚举文件的关系)
-- [17. 推荐维护方式](#17-推荐维护方式)
+- [16. 字段使用规则](#16-字段使用规则)
+  - [16.1 核心字段应保持完整](#161-核心字段应保持完整)
+  - [16.2 字段组之间保留空行](#162-字段组之间保留空行)
+  - [16.3 数组字段统一使用数组写法](#163-数组字段统一使用数组写法)
+  - [16.4 空数组与空字段的区别](#164-空数组与空字段的区别)
+  - [16.5 `status` 与 `visibility` 不应混淆](#165-status-与-visibility-不应混淆)
+  - [16.6 `type: translation` 的额外要求](#166-type-translation-的额外要求)
+  - [16.7 外链原创内容的来源字段](#167-外链原创内容的来源字段)
+  - [16.8 日期字段只使用 `created` 和 `updated`](#168-日期字段只使用-created-和-updated)
+- [17. 与枚举文件的关系](#17-与枚举文件的关系)
+- [18. 推荐维护方式](#18-推荐维护方式)
 
 ---
 
@@ -182,7 +186,52 @@ updated: YYYY-MM-DD
 
 ---
 
-## 4. 字段分组说明
+## 4. 外链原创内容样本
+
+当内容是自己写作、但原始发布位置在 WordPress、个人博客或其他外部平台时，可以保留普通内容类型，并增加外链来源字段。
+
+```yaml
+---
+id: posts-2025-topic-001
+title: 标题
+
+module: posts
+submodule: 2025
+topic: specific-topic
+
+type: article
+status: active
+canonical: true
+
+summary: >
+  摘要
+
+parents: []
+related: []
+
+tags: []
+
+audience: [self, public]
+languages: [zh]
+
+maturity: stable
+confidence: 0.9
+
+visibility: public
+source_of_truth: external
+
+original_source: WordPress
+original_url: https://fivsevn.home.blog/example-post/
+
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+```
+
+这类内容不是翻译，不需要添加 `original_title`、`original_publisher` 或 `translation_note`。  
+`original_source` 用于记录外部平台名称；`original_url` 用于记录原始发布页面，并可供自动生成 index 时作为外链目标使用。
+
+## 5. 字段分组说明
 
 frontmatter 字段按功能可分为以下几组：
 
@@ -197,11 +246,12 @@ frontmatter 字段按功能可分为以下几组：
 | 内容质量 | `maturity`, `confidence` |
 | 可见性与来源 | `visibility`, `source_of_truth` |
 | 翻译扩展 | `original_title`, `original_source`, `original_publisher`, `original_url`, `translation_note` |
+| 外链原创扩展 | `original_source`, `original_url` |
 | 时间信息 | `created`, `updated` |
 
 ---
 
-## 5. 内容身份字段
+## 6. 内容身份字段
 
 ### `id`
 
@@ -258,7 +308,7 @@ title: 标题
 
 ---
 
-## 6. 内容位置字段
+## 7. 内容位置字段
 
 ### `module`
 
@@ -325,7 +375,7 @@ topic:
 
 ---
 
-## 7. 内容类型与展示状态字段
+## 8. 内容类型与展示状态字段
 
 ### `type`
 
@@ -423,7 +473,7 @@ canonical: false
 
 ---
 
-## 8. 内容摘要字段
+## 9. 内容摘要字段
 
 ### `summary`
 
@@ -454,7 +504,7 @@ summary: >
 
 ---
 
-## 9. 内容关系字段
+## 10. 内容关系字段
 
 ### `parents`
 
@@ -521,7 +571,7 @@ related: []
 
 ---
 
-## 10. 标签、受众与语言字段
+## 11. 标签、受众与语言字段
 
 ### `tags`
 
@@ -605,7 +655,7 @@ languages: [zh, en]
 
 ---
 
-## 11. 内容质量字段
+## 12. 内容质量字段
 
 ### `maturity`
 
@@ -680,7 +730,7 @@ confidence: 1.0
 
 ---
 
-## 12. 可见性与来源字段
+## 13. 可见性与来源字段
 
 ### `visibility`
 
@@ -760,11 +810,11 @@ source_of_truth: translation
 
 ---
 
-## 13. 翻译扩展字段
+## 14. 翻译扩展字段
 
-以下字段只在 `type: translation` 时使用。
+以下字段主要在 `type: translation` 时使用。
 
-普通内容不应添加这些字段。
+普通内容通常不应添加这些字段；但当内容为外链原创内容时，可单独使用 `original_source` 与 `original_url` 记录原始发布平台和原文链接。
 
 ---
 
@@ -860,7 +910,7 @@ translation_note: 本文为节选翻译，保留原文主要结构，个别术�
 
 ---
 
-## 14. 时间字段
+## 15. 时间字段
 
 ### `created`
 
@@ -913,9 +963,9 @@ updated: 2026-06-15
 
 ---
 
-## 15. 字段使用规则
+## 16. 字段使用规则
 
-### 15.1 核心字段应保持完整
+### 16.1 核心字段应保持完整
 
 普通内容建议保留以下字段：
 
@@ -955,7 +1005,7 @@ updated:
 
 ---
 
-### 15.2 字段组之间保留空行
+### 16.2 字段组之间保留空行
 
 frontmatter 在书写时，应按字段含义分组，并在字段组之间保留一个空行。
 
@@ -1014,7 +1064,7 @@ updated:
 
 ---
 
-### 15.3 数组字段统一使用数组写法
+### 16.3 数组字段统一使用数组写法
 
 以下字段应统一使用数组：
 
@@ -1046,7 +1096,7 @@ languages: zh
 
 ---
 
-### 15.4 空数组与空字段的区别
+### 16.4 空数组与空字段的区别
 
 空数组表示“当前没有此类项目”：
 
@@ -1068,7 +1118,7 @@ original_url:
 
 ---
 
-### 15.5 `status` 与 `visibility` 不应混淆
+### 16.5 `status` 与 `visibility` 不应混淆
 
 `status` 主要影响自动化索引行为。  
 `visibility` 表示内容预期可见范围。
@@ -1098,7 +1148,7 @@ visibility: private
 
 ---
 
-### 15.6 `type: translation` 的额外要求
+### 16.6 `type: translation` 的额外要求
 
 当使用：
 
@@ -1126,7 +1176,37 @@ source_of_truth: translation
 
 ---
 
-### 15.7 日期字段只使用 `created` 和 `updated`
+### 16.7 外链原创内容的来源字段
+
+当内容是自己写作、但原始发布位置在 WordPress、个人博客或其他外部平台时，可以在普通内容 frontmatter 中增加：
+
+```yaml
+original_source: WordPress
+original_url: https://fivsevn.home.blog/example-post/
+```
+
+这类内容不属于翻译内容，因此不需要添加：
+
+```yaml
+original_title:
+original_publisher:
+translation_note:
+```
+
+推荐组合：
+
+```yaml
+type: article
+source_of_truth: external
+original_source: WordPress
+original_url: https://fivsevn.home.blog/example-post/
+```
+
+其中，`original_url` 可用于自动生成 index 时链接到外部原文页面。
+
+---
+
+### 16.8 日期字段只使用 `created` 和 `updated`
 
 新版 frontmatter 使用：
 
@@ -1145,7 +1225,7 @@ date:
 
 ---
 
-## 16. 与枚举文件的关系
+## 17. 与枚举文件的关系
 
 本文只说明字段意义与使用方式。字段可填写的具体取值应以：
 
@@ -1166,7 +1246,7 @@ content-frontmatter-enums.md
 
 ---
 
-## 17. 推荐维护方式
+## 18. 推荐维护方式
 
 维护 frontmatter 时，建议遵循以下顺序：
 
@@ -1176,7 +1256,8 @@ content-frontmatter-enums.md
 4. 根据预期读者和公开范围，设置 `audience` 与 `visibility`；
 5. 根据内容完成程度，设置 `maturity` 与 `confidence`；
 6. 如为翻译内容，补充原文信息字段；
-7. 最后检查 `created` 与 `updated`。
+7. 如为外链原创内容，补充 `original_source` 与 `original_url`；
+8. 最后检查 `created` 与 `updated`。
 
 frontmatter 应服务于内容组织，而不是制造额外负担。若某个字段一时无法准确填写，应优先使用保守值，并在后续修订中更新。
 
