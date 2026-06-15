@@ -46,9 +46,10 @@ fivsevn-spec/
 
 ### content
 
-内容文件的组织规则。当前主要整理 frontmatter。
+内容文件的组织规则。
 
 - [Content Frontmatter 说明](content/spec-content-frontmatter-001.md)
+- [Content Translation Specification 翻译内容规范](content/spec-content-translation-001.md)
 
 ---
 
