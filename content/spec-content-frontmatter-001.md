@@ -47,11 +47,12 @@
   - [`updated`](#updated)
 - [15. 字段使用规则](#15-字段使用规则)
   - [15.1 核心字段应保持完整](#151-核心字段应保持完整)
-  - [15.2 数组字段统一使用数组写法](#152-数组字段统一使用数组写法)
-  - [15.3 空数组与空字段的区别](#153-空数组与空字段的区别)
-  - [15.4 `status` 与 `visibility` 不应混淆](#154-status-与-visibility-不应混淆)
-  - [15.5 `type: translation` 的额外要求](#155-type-translation-的额外要求)
-  - [15.6 日期字段只使用 `created` 和 `updated`](#156-日期字段只使用-created-和-updated)
+  - [15.2 字段组之间保留空行](#152-字段组之间保留空行)
+  - [15.3 数组字段统一使用数组写法](#153-数组字段统一使用数组写法)
+  - [15.4 空数组与空字段的区别](#154-空数组与空字段的区别)
+  - [15.5 `status` 与 `visibility` 不应混淆](#155-status-与-visibility-不应混淆)
+  - [15.6 `type: translation` 的额外要求](#156-type-translation-的额外要求)
+  - [15.7 日期字段只使用 `created` 和 `updated`](#157-日期字段只使用-created-和-updated)
 - [16. 与枚举文件的关系](#16-与枚举文件的关系)
 - [17. 推荐维护方式](#17-推荐维护方式)
 
@@ -83,6 +84,9 @@ frontmatter 应满足以下原则：
 
 4. **职责分明**  
    本文件说明字段意义；字段可选值由 `content-frontmatter-enums.md` 统一列出。
+
+5. **分组清楚**  
+   frontmatter 应按字段含义分组书写，并在不同字段组之间保留空行，方便人工阅读和维护。
 
 ---
 
@@ -951,7 +955,66 @@ updated:
 
 ---
 
-### 15.2 数组字段统一使用数组写法
+### 15.2 字段组之间保留空行
+
+frontmatter 在书写时，应按字段含义分组，并在字段组之间保留一个空行。
+
+推荐分组如下：
+
+```yaml
+id:
+title:
+
+module:
+submodule:
+topic:
+
+type:
+status:
+canonical:
+
+summary:
+
+parents:
+related:
+
+tags:
+
+audience:
+languages:
+
+maturity:
+confidence:
+
+visibility:
+source_of_truth:
+
+created:
+updated:
+```
+
+翻译内容在 `source_of_truth` 之后、时间字段之前增加翻译扩展字段：
+
+```yaml
+visibility:
+source_of_truth:
+
+original_title:
+original_source:
+original_publisher:
+original_url:
+translation_note:
+
+created:
+updated:
+```
+
+保留空行的目的，是让 frontmatter 在人工编辑时更容易辨认。  
+这些空行不改变 YAML 含义，但属于本规范推荐的书写格式。
+
+---
+
+### 15.3 数组字段统一使用数组写法
 
 以下字段应统一使用数组：
 
@@ -983,7 +1046,7 @@ languages: zh
 
 ---
 
-### 15.3 空数组与空字段的区别
+### 15.4 空数组与空字段的区别
 
 空数组表示“当前没有此类项目”：
 
@@ -1005,7 +1068,7 @@ original_url:
 
 ---
 
-### 15.4 `status` 与 `visibility` 不应混淆
+### 15.5 `status` 与 `visibility` 不应混淆
 
 `status` 主要影响自动化索引行为。  
 `visibility` 表示内容预期可见范围。
@@ -1035,7 +1098,7 @@ visibility: private
 
 ---
 
-### 15.5 `type: translation` 的额外要求
+### 15.6 `type: translation` 的额外要求
 
 当使用：
 
@@ -1063,7 +1126,7 @@ source_of_truth: translation
 
 ---
 
-### 15.6 日期字段只使用 `created` 和 `updated`
+### 15.7 日期字段只使用 `created` 和 `updated`
 
 新版 frontmatter 使用：
 
