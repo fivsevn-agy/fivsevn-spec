@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/spec-source-science-001.md",
-                "mode": "source",
+                "file": "gov/spec-commit-message-001.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "spec-source-science-001"
+              "title": "spec-commit-message-001"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 362.5
   },
   "right": {
     "id": "b3db7e08e9789f1b",
@@ -185,32 +185,32 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "source/spec-source-citation-apa7-001.md",
+    "appendix/spec-commit-message-enums-001.md",
+    "appendix/spec-content-frontmatter-manual-template-001.md",
+    "appendix/spec-content-frontmatter-enums-quickref-001.md",
     "README.md",
-    "gov/spec-gov-terminology-001.md",
-    "gov/spec-gov-meta-frontmatter-001.md",
-    "gov/spec-gov-meta-enums-001.md",
-    "gov/spec-gov-commit-message-001.md",
-    "appendix/spec-gov-commit-message-examples-001.md",
-    "content/content-body.md",
-    "content/content-backmatter.md",
-    "content/content-frontmatter.md",
-    "system/module-map.md",
+    "legacy/legacy-README.md",
+    "legacy/legacy-content-backmatter.md",
+    "legacy/legacy-markdown-format-guide.md",
+    "legacy/README.md",
+    "source/spec-source-citation-apa7-001.md",
+    "source/spec-source-citation-gbt7714-2015-001.md",
+    "archive/spec-archive-policy-001.md",
+    "ver/spec-version-semantics-001.md",
+    "system/spec-system-map-001.md",
+    "legacy/legacy-commit-message-spec-pre.md",
+    "legacy/module-map.md",
+    "appendix/spec-content-frontmatter-enums-001.md",
     "spacetime/spec-datetime-format-001.md",
     "spacetime/spec-datetime-evidence-001.md",
-    "source/spec-source-citation-chicago17-001.md",
-    "source/spec-source-citation-gbt7714-2015-001.md",
-    "source/spec-source-citation-mla9-001.md",
-    "source/spec-source-ham-ecosystem-001.md",
-    "source/spec-source-humanities-001.md",
-    "source/spec-source-mainstream-media-001.md",
-    "source/spec-source-manual-001.md",
-    "source/spec-source-news-aggregators-001.md",
-    "source/spec-source-reference-pool-001.md",
-    "source/spec-source-science-001.md",
-    "legacy/legacy-tmpl-fivsevn-zibaldone.md",
-    "legacy/legacy-tmpl-fivsevn-soapbox.md",
-    "legacy/legacy-tmpl-fivsevn-magneticpoetry.md",
+    "legacy/legacy-spec-datetime-format-001.md",
+    "legacy/legacy-spec-datetime-evidence-001.md",
+    "gov/spec-commit-message-001.md",
+    "content/spec-content-frontmatter-001.md",
+    "legacy/legacy-source-ham-ecosystem-pre.md",
+    "legacy/legacy-spacetime-datetime-format-pre.md",
+    "legacy/legacy-spec-content-meta-enums-001.md",
+    "legacy/legacy-tmpl-fivsevn-00postsample202511.md",
     "meta/meta-frontmatter.yaml",
     "meta-frontmatter.yaml",
     "meta",
