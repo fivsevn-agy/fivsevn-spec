@@ -1,32 +1,14 @@
 ---
-id: spec-gov-commit-message-examples-001
-title: Commit Message Examples
-
 module: system
-submodule: governance
-topic: git-commit-examples
-
 type: note
-status: active
+status: archived
 canonical: false
-
 summary: >
-  提供符合 Commit Message Specification 的示例集合，
-  用于快速参考与实际操作对照。
-
-parents: [system-gov-commit-message-001]
-related: [system-gov-meta-enums-001]
-tags: [system, governance, git, examples]
-
-audience: collaborator
-languages: zh
-maturity: stable
-confidence: 0.99
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: spec
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-15
 ---
 # Commit Message Examples
 

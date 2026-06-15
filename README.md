@@ -1,93 +1,141 @@
-# fivsevn-spec（⚠️ 施工中）
+# fivsevn-spec
 
-- This repository defines the normative specifications governing content production, versioning, provenance, spacetime semantics, and archival practices within the fivsevn ecosystem.
+fivsevn-spec 用来保存 fivsevn 体系中的基础规范，包括内容组织、提交信息、来源引用、时间写法、旧文件处理和版本语义等规则。
+
+这个仓库不保存具体内容本身，只说明内容和相关文件应该怎样组织、维护和引用。
 
 ---
-## repository structure
 
-```
+## 目录结构
+
+```text
 fivsevn-spec/
-├─ gov/  
-├─ ver/
+├─ appendix/
+├─ archive/
 ├─ content/
+├─ gov/
+├─ legacy/
 ├─ source/
 ├─ spacetime/
-├─ archive/
-├─ appendix/
+├─ system/
+├─ ver/
 └─ README.md
 ```
 
 ---
-## index
 
-### gov
-
-> ⭕️ 做事时需要遵循的流程和规则。保证行为一致、过程可复现。  
-> ❌ ~~内容本身的表达~~
-
-- [`commit提交规范`](gov/spec-gov-commit-message-001.md) 
-
-
-### ver
-
-> ⭕️ 变化的语义。区分“更新、修订、重写”。  
-> ❌ ~~具体写了什么~~
-
-- [`xxx`](xxx/xxx-xxx-xxx.md) 
-
-
-### content（施工中）
-
-> ⭕️ 内容本身的组织方式。保证内容可解析、可迁移。  
-> ❌ ~~观点质量与深度~~
-
-- [`元数据模版`](content/spec-content-meta-frontmatter-001.md) 
-- [`元数据枚举规范`](content/spec-content-meta-enums-001.md)
-
-- [`正文前置元信息规范`](content/content-frontmatter.md)
-- [`正文规范`](content/content-body.md)
-- [`正文后置信息规范`](content/content-backmatter.md)
-
-
-### source
-
-> ⭕️ 信息来源与证据。明确可信度。  
-> ❌ ~~写作风格~~
-
-- [`新闻聚合工具（News Aggregators）`](source/spec-source-news-aggregators-001.md)
-- [`主流媒体（Mainstream Media）`](source/spec-source-mainstream-media-001.md)
-- [`科学与研究（Science）`](source/spec-source-science-001.md)
-- [`人文学科（Humanities）`](source/spec-source-humanities-001.md)
-- [`HAM资源汇总`](source/spec-source-ham-ecosystem-001.md)
-- [`参考来源暂存`](source/spec-source-reference-pool-001.md)
-- [`引用规范（APA 7）`](source/spec-source-citation-apa7-001.md)
-- [`引用规范（MLA 9）`](source/spec-source-citation-mla9-001.md)
-- [`引用规范（Chicago 17）`](source/spec-source-citation-chicago17-001.md)
-- [`引用规范（GB/T 7714-2015）`](source/spec-source-citation-gbt7714-2015-001.md)
-- [`使用手册（Manual）`](source/spec-source-manual-001.md)
-
-
-### spacetime
-
-> ⭕️ 时间、地点、语境。防止语义随时间失真。  
-> ❌ ~~事件本身对错~~
-
-- [`日期与时间书写规范`](spacetime/spec-datetime-format-001.md)
-- [`时间戳的证据与严格使用规范`](spacetime/spec-datetime-evidence-001.md)
-
-
-### archive
-
-> ⭕️ 长期保存与可追溯性。保证未来仍可访问与理解。  
-> ❌ ~~当前展示效果~~
-
-- [`xxx`](xxx/xxx-xxx-xxx.md) 
-
+## 索引
 
 ### appendix
 
-> ⭕️ 示例与说明。可以用来辅助理解规则。  
-> ❌ ~~约束性规则~~
+辅助材料。主要放枚举表、速查表和示例。
 
-- [`commit示例`](appendix/spec-gov-commit-message-examples-001.md) 
+- [Commit Message 枚举表](appendix/spec-commit-message-enums-001.md)
+- [Content Frontmatter 枚举表](appendix/spec-content-frontmatter-enums-001.md)
+- [Content Frontmatter 枚举速查](appendix/spec-content-frontmatter-enums-quickref-001.md)
 
+---
+
+### archive
+
+旧文件和归档的处理规则。
+
+- [Archive and Legacy Policy](archive/spec-archive-policy-001.md)
+
+---
+
+### content
+
+内容文件的组织规则。当前主要整理 frontmatter。
+
+- [Content Frontmatter 说明](content/spec-content-frontmatter-001.md)
+
+---
+
+### gov
+
+做事时使用的规则。当前主要是 commit message。
+
+- [Commit Message 说明](gov/spec-commit-message-001.md)
+
+---
+
+### legacy
+
+旧文件存放区。
+
+这里的文件已经不作为当前规范使用，只保留历史、迁移和对照价值。旧文件移入时，直接在原文件名前加 `legacy-`。
+
+```text
+spec-example-001.md
+→ legacy-spec-example-001.md
+```
+
+---
+
+### source
+
+来源、引用格式和资料类型相关规范。  
+这一部分暂时保留现状，后续再单独整理。
+
+- [Citation APA 7](source/spec-source-citation-apa7-001.md)
+- [Citation Chicago 17](source/spec-source-citation-chicago17-001.md)
+- [Citation GB/T 7714-2015](source/spec-source-citation-gbt7714-2015-001.md)
+- [Citation MLA 9](source/spec-source-citation-mla9-001.md)
+- [HAM Ecosystem](source/spec-source-ham-ecosystem-001.md)
+- [Humanities Sources](source/spec-source-humanities-001.md)
+- [Mainstream Media Sources](source/spec-source-mainstream-media-001.md)
+- [Source Manual](source/spec-source-manual-001.md)
+- [News Aggregators](source/spec-source-news-aggregators-001.md)
+- [Reference Pool](source/spec-source-reference-pool-001.md)
+- [Science Sources](source/spec-source-science-001.md)
+
+---
+
+### spacetime
+
+日期、时间和严格时间戳相关规范。
+
+- [Date and Time Format Specification](spacetime/spec-datetime-format-001.md)
+- [Datetime Evidence Specification](spacetime/spec-datetime-evidence-001.md)
+
+---
+
+### system
+
+仓库结构和目录职责说明。
+
+- [System Map](system/spec-system-map-001.md)
+
+---
+
+### ver
+
+版本变化语义的预留目录。当前只保留轻量说明。
+
+- [Version Semantics](ver/spec-version-semantics-001.md)
+
+---
+
+## 当前整理方式
+
+目前采用一个简单规则：
+
+```text
+正式说明    → 放在对应目录
+枚举和速查  → 放在 appendix
+旧文件      → 放在 legacy
+归档规则    → 放在 archive
+```
+
+这样做是为了减轻迭代压力。  
+新规范可以先放到清楚的位置；旧文件不用马上删除，先移入 `legacy/` 保留对照；辅助材料也不和正文规范混在一起。
+
+---
+
+## 备注
+
+- 本仓库仍在整理中。
+- README 只列当前主要入口。
+- `legacy/` 里的文件不代表当前规范。
+- `source/` 暂时不做大改。

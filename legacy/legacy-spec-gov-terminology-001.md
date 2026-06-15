@@ -1,33 +1,14 @@
 ---
-id: spec-gov-terminology-001
-title: Terminology Governance 术语治理规范
-
-module: spec
-submodule: gov
-topic: terminology-definition
-
-type: spec
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  定义 fivsevn 系统核心结构术语。
-  明确 layer / axis / module / kernel / meta 等概念，
-  防止术语漂移与结构混乱。
-
-parents: []
-related: []
-tags: [terminology, governance, structure]
-
-audience: collaborator
-languages: zh / en
-maturity: stable
-confidence: 0.99
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: spec
-
-created: 2026-03-03
-updated: 2026-03-03
+source_of_truth: devlog
+updated: 2026-06-15
 ---
 # Terminology Governance
 
