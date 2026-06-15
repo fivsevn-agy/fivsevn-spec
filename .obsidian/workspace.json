@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/spec-content-frontmatter-001.md",
+                "file": "content/spec-content-translation-001.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "spec-content-frontmatter-001"
+              "title": "spec-content-translation-001"
             }
           }
         ]
@@ -185,7 +185,8 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "content/spec-content-frontmatter-001.md",
+    "content/spec-content-translation-001.md",
+    "content/spec-content-translation-001.md",
     "content/spec-content-frontmatter-001.md",
     "appendix/spec-content-frontmatter-enums-quickref-001.md",
     "appendix/spec-content-frontmatter-enums-001.md",
@@ -210,7 +211,6 @@
     "legacy/legacy-spec-datetime-evidence-001.md",
     "legacy/legacy-source-ham-ecosystem-pre.md",
     "legacy/legacy-spacetime-datetime-format-pre.md",
-    "legacy/legacy-spec-content-meta-enums-001.md",
     "meta/meta-frontmatter.yaml",
     "meta-frontmatter.yaml",
     "meta",
