@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "appendix/spec-content-frontmatter-enums-quickref-001.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "spec-content-frontmatter-enums-quickref-001"
             }
           }
         ]
@@ -185,24 +185,25 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
+    "legacy/legacy-content-body.md",
+    "appendix/spec-content-frontmatter-enums-quickref-001.md",
+    "archive/spec-archive-policy-001.md",
+    "legacy/legacy-content-backmatter.md",
+    "appendix/spec-content-frontmatter-enums-001.md",
+    "README.md",
     "spacetime/spec-datetime-evidence-001.md",
     "spacetime/spec-datetime-format-001.md",
-    "README.md",
     "source/spec-source-citation-apa7-001.md",
     "ver/spec-version-semantics-001.md",
-    "appendix/spec-content-frontmatter-enums-quickref-001.md",
     "appendix/spec-commit-message-enums-001.md",
     "content/spec-content-translation-001.md",
     "content/spec-content-frontmatter-001.md",
-    "appendix/spec-content-frontmatter-enums-001.md",
     "gov/spec-commit-message-001.md",
     "appendix/spec-content-frontmatter-manual-template-001.md",
     "legacy/legacy-README.md",
-    "legacy/legacy-content-backmatter.md",
     "legacy/legacy-markdown-format-guide.md",
     "legacy/README.md",
     "source/spec-source-citation-gbt7714-2015-001.md",
-    "archive/spec-archive-policy-001.md",
     "system/spec-system-map-001.md",
     "legacy/legacy-commit-message-spec-pre.md",
     "legacy/module-map.md",
