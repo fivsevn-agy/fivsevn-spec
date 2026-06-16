@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "appendix/spec-content-frontmatter-enums-quickref-001.md",
+                "file": "source/spec-source-reference-pool-001.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "spec-content-frontmatter-enums-quickref-001"
+              "title": "spec-source-reference-pool-001"
             }
           }
         ]
@@ -185,8 +185,13 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "appendix/spec-content-frontmatter-enums-001.md",
+    "source/spec-source-science-001.md",
+    "source/spec-source-manual-001.md",
+    "source/spec-source-mainstream-media-001.md",
+    "source/spec-source-humanities-001.md",
+    "source/spec-source-ham-ecosystem-001.md",
     "appendix/spec-content-frontmatter-enums-quickref-001.md",
+    "appendix/spec-content-frontmatter-enums-001.md",
     "content/spec-content-frontmatter-001.md",
     "legacy/legacy-content-body.md",
     "archive/spec-archive-policy-001.md",
@@ -206,10 +211,6 @@
     "source/spec-source-citation-gbt7714-2015-001.md",
     "system/spec-system-map-001.md",
     "legacy/legacy-commit-message-spec-pre.md",
-    "legacy/module-map.md",
-    "legacy/legacy-spec-datetime-format-001.md",
-    "legacy/legacy-spec-datetime-evidence-001.md",
-    "legacy/legacy-source-ham-ecosystem-pre.md",
     "meta/meta-frontmatter.yaml",
     "meta-frontmatter.yaml",
     "meta",
