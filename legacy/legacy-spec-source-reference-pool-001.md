@@ -1,32 +1,14 @@
 ---
-id: spec-source-reference-pool-001
-title: Source Reference Pool
-
-module: spec
-submodule: source
-topic: reference-pool
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  潜在信息来源与资料站点的暂存池，
-  用于后续筛选与结构化整理。
-
-parents: []
-related: []
-tags: [system, source, pool]
-
-audience: self
-languages: zh
-maturity: evolving
-confidence: 0.92
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 # Source Reference Pool
 # 参考来源暂存

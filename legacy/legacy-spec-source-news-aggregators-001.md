@@ -1,31 +1,14 @@
 ---
-id: spec-source-news-aggregators-001
-title: News Aggregators Index
-
-module: spec
-submodule: source
-topic: news-aggregators
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  新闻聚合工具与信息入口的结构化索引。
-
-parents: [system-source-reference-pool-001]
-related: [system-source-mainstream-media-001]
-tags: [system, source, news, aggregators]
-
-audience: public
-languages: zh
-maturity: stable
-confidence: 0.96
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 
 ## News Aggregators（新闻聚合工具 / 信息入口）

@@ -1,31 +1,14 @@
 ---
-id: spec-source-humanities-001
-title: Humanities Reference Index
-
-module: spec
-submodule: source
-topic: humanities-index
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  人文学科相关期刊、研究平台与思想媒体的结构化索引。
-
-parents: [system-source-reference-pool-001]
-related: []
-tags: [system, source, humanities]
-
-audience: public
-languages: zh
-maturity: evolving
-confidence: 0.95
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 *过去存档+AI建议，尚未整理。
 

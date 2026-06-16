@@ -1,31 +1,14 @@
 ---
-id: spec-source-science-001
-title: Science & Research Index
-
-module: spec
-submodule: source
-topic: science-index
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  从顶级学术期刊到科普媒体的科学信息源分层索引。
-
-parents: [system-source-reference-pool-001]
-related: []
-tags: [system, source, science]
-
-audience: public
-languages: zh
-maturity: stable
-confidence: 0.97
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 *过去存档+AI建议，尚未整理。
 

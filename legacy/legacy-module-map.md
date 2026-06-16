@@ -1,33 +1,14 @@
 ---
-id: spec-module-map-001
-title: Module Map - spec
-
-module: spec
-submodule: topology
-topic: structural-axes
-
-type: specification
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  定义 fivsevn 内容系统的模块拓扑结构。
-  明确各模块职责边界与语义轴线，
-  作为结构解析与未来扩展的基础。
-
-parents: [spec-index]
-related: []
-tags: [structure, topology, modules]
-
-audience: self
-languages: zh
-maturity: evolving
-confidence: 0.95
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: spec
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 
 # Module Map - spec

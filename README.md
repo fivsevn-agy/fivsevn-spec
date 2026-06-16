@@ -77,19 +77,11 @@ spec-example-001.md
 ### source
 
 来源、引用格式和资料类型相关规范。  
-这一部分暂时保留现状，后续再单独整理。
 
 - [Citation APA 7](source/spec-source-citation-apa7-001.md)
 - [Citation Chicago 17](source/spec-source-citation-chicago17-001.md)
 - [Citation GB/T 7714-2015](source/spec-source-citation-gbt7714-2015-001.md)
 - [Citation MLA 9](source/spec-source-citation-mla9-001.md)
-- [HAM Ecosystem](source/spec-source-ham-ecosystem-001.md)
-- [Humanities Sources](source/spec-source-humanities-001.md)
-- [Mainstream Media Sources](source/spec-source-mainstream-media-001.md)
-- [Source Manual](source/spec-source-manual-001.md)
-- [News Aggregators](source/spec-source-news-aggregators-001.md)
-- [Reference Pool](source/spec-source-reference-pool-001.md)
-- [Science Sources](source/spec-source-science-001.md)
 
 ---
 

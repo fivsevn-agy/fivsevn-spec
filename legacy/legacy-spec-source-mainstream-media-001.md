@@ -1,31 +1,14 @@
 ---
-id: spec-source-mainstream-media-001
-title: Mainstream Media Index
-
-module: spec
-submodule: source
-topic: mainstream-media
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  全球主流媒体、通讯社与政策媒体的结构化分类索引。
-
-parents: [system-source-reference-pool-001]
-related: [system-source-news-aggregators-001]
-tags: [system, source, media]
-
-audience: public
-languages: zh
-maturity: stable
-confidence: 0.97
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 # Mainstream Media（主流媒体）
 

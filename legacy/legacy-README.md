@@ -66,17 +66,17 @@ fivsevn-spec/
 > ⭕️ 信息来源与证据。明确可信度。  
 > ❌ ~~写作风格~~
 
-- [`新闻聚合工具（News Aggregators）`](source/spec-source-news-aggregators-001.md)
-- [`主流媒体（Mainstream Media）`](source/spec-source-mainstream-media-001.md)
-- [`科学与研究（Science）`](source/spec-source-science-001.md)
-- [`人文学科（Humanities）`](source/spec-source-humanities-001.md)
-- [`HAM资源汇总`](source/spec-source-ham-ecosystem-001.md)
-- [`参考来源暂存`](source/spec-source-reference-pool-001.md)
+- [`新闻聚合工具（News Aggregators）`](legacy-spec-source-news-aggregators-001.md)
+- [`主流媒体（Mainstream Media）`](legacy-spec-source-mainstream-media-001.md)
+- [`科学与研究（Science）`](legacy-spec-source-science-001.md)
+- [`人文学科（Humanities）`](legacy-spec-source-humanities-001.md)
+- [`HAM资源汇总`](legacy-spec-source-ham-ecosystem-001.md)
+- [`参考来源暂存`](legacy-spec-source-reference-pool-001.md)
 - [`引用规范（APA 7）`](source/spec-source-citation-apa7-001.md)
 - [`引用规范（MLA 9）`](source/spec-source-citation-mla9-001.md)
 - [`引用规范（Chicago 17）`](source/spec-source-citation-chicago17-001.md)
 - [`引用规范（GB/T 7714-2015）`](source/spec-source-citation-gbt7714-2015-001.md)
-- [`使用手册（Manual）`](source/spec-source-manual-001.md)
+- [`使用手册（Manual）`](legacy-spec-source-manual-001.md)
 
 
 ### spacetime

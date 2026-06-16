@@ -1,31 +1,14 @@
 ---
-id: spec-source-ham-ecosystem-001
-title: HAM Radio Ecosystem
-
-module: spec
-submodule: source
-topic: ham-ecosystem
-
-type: index
-status: active
-canonical: true
-
+module: system
+type: note
+status: archived
+canonical: false
 summary: >
-  业余无线电相关组织、网络、协议、软件与考试体系的结构化索引。
-
-parents: [system-source-reference-pool-001]
-related: [netcom-lora-meshtastic-layered-model-001]
-tags: [system, source, ham, radio]
-
-audience: public
-languages: zh
-maturity: evolving
-confidence: 0.96
+  archived
+tags: [archive]
 visibility: public
-source_of_truth: site
-
-created: 2026-03-01
-updated: 2026-03-01
+source_of_truth: devlog
+updated: 2026-06-16
 ---
 # HAM Radio Ecosystem
 # 业余无线电 信息源索引
