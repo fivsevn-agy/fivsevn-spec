@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "gov/spec-commit-message-001.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "spec-commit-message-001"
             }
           }
         ]
@@ -185,10 +185,11 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "ver/spec-version-semantics-001.md",
-    "README.md",
-    "archive/spec-archive-policy-001.md",
     "appendix/spec-source-intake-enums-001.md",
+    "archive/spec-archive-policy-001.md",
+    "content/spec-content-frontmatter-001.md",
+    "README.md",
+    "ver/spec-version-semantics-001.md",
     "source/spec-source-intake-fields-001.md",
     "source/spec-source-citation-apa7-001.md",
     "source/spec-source-citation-chicago17-001.md",
@@ -208,7 +209,6 @@
     "legacy/legacy-content-backmatter.md",
     "appendix/spec-content-frontmatter-enums-quickref-001.md",
     "appendix/spec-content-frontmatter-enums-001.md",
-    "content/spec-content-frontmatter-001.md",
     "legacy/legacy-content-body.md",
     "spacetime/spec-datetime-evidence-001.md",
     "meta/meta-frontmatter.yaml",
