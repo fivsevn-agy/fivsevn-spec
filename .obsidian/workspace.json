@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
-                "mode": "source",
+                "file": "appendix/spec-source-intake-enums-001.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "spec-source-intake-enums-001"
             }
           }
         ]
@@ -185,9 +185,11 @@
   },
   "active": "dfc5cca1e132dd2e",
   "lastOpenFiles": [
-    "source/spec-source-citation-chicago17-001.md",
-    "README.md",
+    "source/spec-source-intake-fields-001.md",
     "source/spec-source-citation-apa7-001.md",
+    "appendix/spec-source-intake-enums-001.md",
+    "README.md",
+    "source/spec-source-citation-chicago17-001.md",
     "source/spec-source-citation-gbt7714-2015-001.md",
     "source/spec-source-citation-mla9-001.md",
     "legacy/README.md",
@@ -209,8 +211,6 @@
     "archive/spec-archive-policy-001.md",
     "spacetime/spec-datetime-evidence-001.md",
     "spacetime/spec-datetime-format-001.md",
-    "ver/spec-version-semantics-001.md",
-    "appendix/spec-commit-message-enums-001.md",
     "meta/meta-frontmatter.yaml",
     "meta-frontmatter.yaml",
     "meta",
