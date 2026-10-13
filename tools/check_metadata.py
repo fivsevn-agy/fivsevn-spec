@@ -1,83 +1,158 @@
-"""Read-only document checks against the shared schema; never rewrite or publish."""
+"""Read-only shared metadata validation; never rewrite sources or publish content."""
 from __future__ import annotations
-import argparse, datetime, json, re, sys
+
+import argparse
+import datetime
+import json
+import re
+import sys
 from pathlib import Path
+from typing import Any
+
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
-DISPLAY={'README.md','posts/2026/posts-toy-reference.md'}
-CONFIG={'posts/_wordpress/trigger.md','intake/sources.md','intake/llm-context.md','intake/gpt.md'}
-class UniqueLoader(yaml.SafeLoader):pass
+DISPLAY = {"README.md", "posts/2026/posts-toy-reference.md"}
+CONFIG = {
+    "posts/_wordpress/trigger.md", "intake/sources.md",
+    "intake/llm-context.md", "intake/gpt.md",
+}
 
-def unique_mapping(loader,node,deep=False):
-    out={}
-    for key_node,value_node in node.value:
-        key=loader.construct_object(key_node,deep=deep)
-        if key in out:raise ValueError(f'duplicate YAML key: {key}')
-        out[key]=loader.construct_object(value_node,deep=deep)
-    return out
-UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,unique_mapping)
 
-def plain(value):
-    if isinstance(value,(datetime.date,datetime.datetime)):return value.isoformat()
-    if isinstance(value,dict):return {str(k):plain(v) for k,v in value.items()}
-    if isinstance(value,list):return [plain(v) for v in value]
+class UniqueLoader(yaml.SafeLoader):
+    """Reject duplicate keys instead of silently keeping the last value."""
+
+
+def unique_mapping(loader, node, deep=False):
+    result = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in result:
+            raise ValueError(f"duplicate YAML key: {key}")
+        result[key] = loader.construct_object(value_node, deep=deep)
+    return result
+
+
+UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique_mapping)
+
+
+def plain(value: Any) -> Any:
+    if isinstance(value, (datetime.date, datetime.datetime)):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {str(key): plain(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [plain(item) for item in value]
     return value
 
-def read_metadata(path):
-    text=path.read_text(encoding='utf-8').lstrip('\ufeff')
-    m=re.match(r'\A---\r?\n(.*?)\r?\n---(?:\r?\n|$)',text,re.S)
-    if not m:raise ValueError('missing frontmatter')
-    data=yaml.load(m[1],Loader=UniqueLoader)
-    if not isinstance(data,dict):raise ValueError('frontmatter must be a mapping')
-    return plain(data)
 
-def eligible(path,root,repo):
-    rel=path.relative_to(root)
-    if any(part.startswith('.') for part in rel.parts):return False
-    if path.name.lower() in {'index.md','index.html'}:return False
-    if repo=='devlog' and rel.as_posix() in DISPLAY|CONFIG:return False
-    return path.suffix.lower()=='.md'
+def read_metadata(path: Path) -> dict:
+    text = path.read_text(encoding="utf-8").lstrip("\ufeff")
+    match = re.match(r"\A---\r?\n(.*?)\r?\n---(?:\r?\n|$)", text, re.S)
+    if not match:
+        raise ValueError("missing or unclosed frontmatter")
+    metadata = yaml.load(match[1], Loader=UniqueLoader)
+    if not isinstance(metadata, dict):
+        raise ValueError("frontmatter must be a mapping")
+    return plain(metadata)
 
-def check(root,schema_path,repo='devlog',reference_roots=()):
-    schema=json.loads(schema_path.read_text(encoding='utf-8'))
-    validator=Draft202012Validator(schema,format_checker=FormatChecker())
-    errors=[];warnings=[];documents=[];ids={};registry=set()
-    for folder in [root,*reference_roots]:
-        for p in folder.rglob('*.md'):
-            if any(x.startswith('.') for x in p.relative_to(folder).parts):continue
-            try:meta=read_metadata(p)
-            except (ValueError,yaml.YAMLError):continue
-            if meta.get('id'):registry.add(meta['id'])
-            registry.update(meta.get('aliases') or [])
-    for p in sorted(root.rglob('*.md')):
-        if not eligible(p,root,repo):continue
-        rel=p.relative_to(root).as_posix()
-        try:meta=read_metadata(p)
-        except (ValueError,yaml.YAMLError) as exc:errors.append(f'{rel}: {exc}');continue
-        documents.append(rel)
-        for err in validator.iter_errors(meta):errors.append(f'{rel}: {".".join(map(str,err.path))}: {err.message}')
-        ident=meta.get('id')
-        if ident:
-            if ident in ids:errors.append(f'{rel}: duplicate id also in {ids[ident]}')
-            ids[ident]=rel
-            if p.stem!=ident and meta.get('filename_policy') not in {'entrypoint','stable-link'}:
-                errors.append(f'{rel}: filename must match id, or record a path exception')
-        if meta.get('created') and meta.get('updated') and meta['updated']<meta['created']:
-            errors.append(f'{rel}: updated precedes created')
-        for key in ['parents','related']:
-            for ident in meta.get(key,[]) if isinstance(meta.get(key),list) else []:
-                if ident not in registry:warnings.append(f'{rel}: unresolved {key}: {ident}')
-        if meta.get('status') in {'active','publish','published'} and meta.get('visibility')=='private':
-            warnings.append(f'{rel}: index status and intended visibility differ; no access control is implied')
-    return {'documents':len(documents),'errors':errors,'warnings':warnings}
 
-def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,default=Path('.'));ap.add_argument('--schema',type=Path,required=True)
-    ap.add_argument('--repo',choices=['devlog','spec','assets'],default='devlog');ap.add_argument('--references',type=Path,action='append',default=[])
-    ap.add_argument('--json',type=Path);a=ap.parse_args()
-    result=check(a.root.resolve(),a.schema.resolve(),a.repo,[p.resolve() for p in a.references])
-    print(json.dumps(result,ensure_ascii=False,indent=2))
-    if a.json:a.json.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    return bool(result['errors'])
-if __name__=='__main__':sys.exit(main())
+def eligible(path: Path, root: Path, repo: str) -> bool:
+    relative = path.relative_to(root)
+    if any(part.startswith(".") for part in relative.parts):
+        return False
+    if path.name.lower() in {"index.md", "index.html"}:
+        return False
+    if repo == "devlog" and relative.as_posix() in DISPLAY | CONFIG:
+        return False
+    return path.suffix.lower() == ".md"
+
+
+def pending_draft(path: Path, root: Path, repo: str) -> bool:
+    """Raw first-level drafts are intentionally completed by the existing draft task."""
+    relative = path.relative_to(root)
+    if repo != "devlog" or len(relative.parts) != 3:
+        return False
+    if relative.parts[0] not in {"posts", "natsci", "netcom"} or relative.parts[1] != "_drafts":
+        return False
+    if path.name.startswith("TEMPLATE-"):
+        return True
+    text = path.read_text(encoding="utf-8")
+    return not text.startswith(("---\n", "---\r\n"))
+
+
+def check(root: Path, schema_path: Path, repo="devlog", reference_roots=()) -> dict:
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    errors, warnings, documents, pending = [], [], [], []
+    ids, registry = {}, set()
+    for folder in [root, *reference_roots]:
+        for path in folder.rglob("*.md"):
+            if any(part.startswith(".") for part in path.relative_to(folder).parts):
+                continue
+            try:
+                metadata = read_metadata(path)
+            except (ValueError, TypeError, yaml.YAMLError):
+                continue
+            if isinstance(metadata.get("id"), str):
+                registry.add(metadata["id"])
+            aliases = metadata.get("aliases", [])
+            if isinstance(aliases, list):
+                registry.update(value for value in aliases if isinstance(value, str))
+
+    for path in sorted(root.rglob("*.md")):
+        if not eligible(path, root, repo):
+            continue
+        relative = path.relative_to(root).as_posix()
+        if pending_draft(path, root, repo):
+            pending.append(relative)
+            continue
+        try:
+            metadata = read_metadata(path)
+        except (ValueError, TypeError, yaml.YAMLError) as error:
+            errors.append(f"{relative}: {error}")
+            continue
+        documents.append(relative)
+        invalid = list(validator.iter_errors(metadata))
+        for error in invalid:
+            location = ".".join(map(str, error.path))
+            errors.append(f"{relative}: {location}: {error.message}")
+        if invalid:
+            continue
+        ident = metadata["id"]
+        if ident in ids:
+            errors.append(f"{relative}: duplicate id also in {ids[ident]}")
+        ids[ident] = relative
+        if path.stem != ident and metadata.get("filename_policy") not in {"entrypoint", "stable-link"}:
+            errors.append(f"{relative}: filename must match id, or record a path exception")
+        if metadata.get("filename_policy") == "stable-link" and not metadata.get("note"):
+            errors.append(f"{relative}: explain the stable-link exception in note")
+        if metadata.get("created") and metadata.get("updated") and metadata["updated"] < metadata["created"]:
+            errors.append(f"{relative}: updated precedes created")
+        for field in ["parents", "related"]:
+            for target in metadata[field]:
+                if target not in registry:
+                    warnings.append(f"{relative}: unresolved {field}: {target}")
+        if metadata["status"] in {"active", "publish", "published"} and metadata["visibility"] == "private":
+            warnings.append(f"{relative}: index status and intended visibility differ; metadata is not access control")
+    return {"documents": len(documents), "pending_drafts": pending, "errors": errors, "warnings": warnings}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument("--schema", type=Path, required=True)
+    parser.add_argument("--repo", choices=["devlog", "spec", "assets"], default="devlog")
+    parser.add_argument("--references", type=Path, action="append", default=[])
+    parser.add_argument("--json", type=Path)
+    args = parser.parse_args()
+    result = check(args.root.resolve(), args.schema.resolve(), args.repo, [p.resolve() for p in args.references])
+    output = json.dumps(result, ensure_ascii=False, indent=2)
+    print(output)
+    if args.json:
+        args.json.write_text(output + "\n", encoding="utf-8")
+    return int(bool(result["errors"]))
+
+
+if __name__ == "__main__":
+    sys.exit(main())
