@@ -1,3 +1,37 @@
+---
+id: "spec-datetime-format-001"
+title: "日期与时间书写规范"
+
+module: "spec"
+submodule: "spacetime"
+topic: "spec-datetime-format-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明日期与时间书写规范。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2025-12-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Date and Time Format Specification  
 # 日期与时间书写规范
 

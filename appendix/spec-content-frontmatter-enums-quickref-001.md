@@ -1,11 +1,47 @@
+---
+id: "spec-content-frontmatter-enums-quickref-001"
+title: "Content Frontmatter 枚举速查"
+
+module: "spec"
+submodule: "appendix"
+topic: "spec-content-frontmatter-enums-quickref-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明Content Frontmatter 枚举速查。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2026-06-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Content Frontmatter 枚举速查
 
-本文件按标准 frontmatter 的字段顺序排列。  
+本文件按标准 frontmatter 的字段顺序排列。
+
+> 前两节列出候选值，不能整块复制为文章 metadata；单值字段每次只选一个值。可复制草稿见第 4、5 节，特殊信息收纳见 [metadata 规范](../content/spec-content-frontmatter-001.md#统一使用与扩展字段)。  
 每个枚举字段直接列出可选值，方便查阅、复制和改写。
 
 ---
 
-## 1. 普通内容速查模板
+## 1. 普通内容取值目录（不是文章模板）
 
 ```yaml
 ---
@@ -24,8 +60,8 @@ submodule:
   posts:
     - index                  # posts 模块入口
     - drafts                 # posts 草稿区
-    - 2025                   # 2025 年内容
-    - 2026                   # 2026 年内容
+    - "2025"                   # 2025 年内容
+    - "2026"                   # 2026 年内容
     - ai-discourse-analysis  # AI 话语分析专题
 
   natsci:
@@ -144,7 +180,7 @@ updated: YYYY-MM-DD
 
 ---
 
-## 2. 翻译内容速查模板
+## 2. 翻译内容取值目录（不是文章模板）
 
 ```yaml
 ---
@@ -163,8 +199,8 @@ submodule:
   posts:
     - index                  # posts 模块入口
     - drafts                 # posts 草稿区
-    - 2025                   # 2025 年内容
-    - 2026                   # 2026 年内容
+    - "2025"                   # 2025 年内容
+    - "2026"                   # 2026 年内容
     - ai-discourse-analysis  # AI 话语分析专题
 
   natsci:

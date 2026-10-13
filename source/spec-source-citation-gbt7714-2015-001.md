@@ -1,31 +1,49 @@
 ---
-id: spec-source-citation-gbt7714-2015-001
-title: GB/T 7714—2015 Citation Format (Informative)
+id: "spec-source-citation-gbt7714-2015-001"
+title: "GB/T 7714—2015 Citation Format (Informative)"
 
-module: spec
-submodule: source
-topic: citation-gbt7714
+module: "spec"
+submodule: "source"
+topic: "citation-gbt7714"
 
-type: index
-status: active
+type: "spec"
+status: "active"
 canonical: true
 
-summary: >
+summary: |
   中国国家标准 GB/T 7714—2015 引用格式的来源说明与获取路径索引。
 
-parents: [system-source-reference-pool-001]
-related: [system-source-citation-apa7-001]
-tags: [system, source, citation, gbt]
+parents: []
+related: ["spec-source-citation-apa7-001"]
 
-audience: public
-languages: zh
-maturity: stable
+tags: ["system", "source", "citation", "gbt"]
+
+audience: ["public"]
+languages: ["zh"]
+
+maturity: "stable"
 confidence: 0.97
-visibility: public
-source_of_truth: site
 
-created: 2026-03-01
-updated: 2026-03-01
+visibility: "public"
+source_of_truth: "spec"
+
+legacy:
+  metadata:
+    audience: public
+    languages: zh
+    parents:
+    - system-source-reference-pool-001
+    related:
+    - system-source-citation-apa7-001
+    source_of_truth: site
+    type: index
+  unresolved_relations:
+    parents:
+    - system-source-reference-pool-001
+
+created: "2026-03-01"
+updated: "2026-03-01"
+metadata_updated: "2026-10-13"
 ---
 # GB/T 7714-2015 Citation Format (Informative)
 # GB/T 7714—2015 引用格式参考

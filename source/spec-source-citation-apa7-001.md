@@ -1,31 +1,50 @@
 ---
-id: spec-source-citation-apa7-001
-title: APA 7 Citation Format (Informative)
+id: "spec-source-citation-apa7-001"
+title: "APA 7 Citation Format (Informative)"
 
-module: spec
-submodule: source
-topic: citation-apa7
+module: "spec"
+submodule: "source"
+topic: "citation-apa7"
 
-type: index
-status: active
+type: "spec"
+status: "active"
 canonical: true
 
-summary: >
+summary: |
   APA 第七版引用格式的官方入口与示例索引。
 
-parents: [system-source-reference-pool-001]
-related: [system-source-citation-mla9-001, system-source-citation-chicago17-001]
-tags: [system, source, citation, apa]
+parents: []
+related: ["spec-source-citation-mla9-001", "spec-source-citation-chicago17-001"]
 
-audience: public
-languages: zh
-maturity: stable
+tags: ["system", "source", "citation", "apa"]
+
+audience: ["public"]
+languages: ["zh"]
+
+maturity: "stable"
 confidence: 0.98
-visibility: public
-source_of_truth: site
 
-created: 2026-03-01
-updated: 2026-03-01
+visibility: "public"
+source_of_truth: "spec"
+
+legacy:
+  metadata:
+    audience: public
+    languages: zh
+    parents:
+    - system-source-reference-pool-001
+    related:
+    - system-source-citation-mla9-001
+    - system-source-citation-chicago17-001
+    source_of_truth: site
+    type: index
+  unresolved_relations:
+    parents:
+    - system-source-reference-pool-001
+
+created: "2026-03-01"
+updated: "2026-03-01"
+metadata_updated: "2026-10-13"
 ---
 # APA 7 Citation Format (Informative)
 # APA 7 引用格式参考
