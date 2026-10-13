@@ -1,14 +1,41 @@
 ---
-module: system
-type: note
-status: archived
+id: "legacy-spec-gov-terminology-001"
+title: "术语治理规范"
+
+module: "spec"
+submodule: "legacy"
+topic: "archive"
+
+type: "note"
+status: "archived"
 canonical: false
-summary: >
+
+summary: |
   archived
-tags: [archive]
-visibility: public
-source_of_truth: devlog
-updated: 2026-06-15
+
+parents: []
+related: []
+
+tags: ["archive"]
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "deprecated"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+legacy:
+  metadata:
+    module: system
+    source_of_truth: devlog
+
+created: "2026-03-03"
+updated: "2026-06-15"
+metadata_updated: "2026-10-13"
 ---
 # Terminology Governance
 

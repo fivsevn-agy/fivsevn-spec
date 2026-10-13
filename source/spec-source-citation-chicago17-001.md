@@ -1,31 +1,49 @@
 ---
-id: spec-source-citation-chicago17-001
-title: Chicago 17 Citation Format (Informative)
+id: "spec-source-citation-chicago17-001"
+title: "Chicago 17 Citation Format (Informative)"
 
-module: spec
-submodule: source
-topic: citation-chicago17
+module: "spec"
+submodule: "source"
+topic: "citation-chicago17"
 
-type: index
-status: active
+type: "spec"
+status: "active"
 canonical: true
 
-summary: >
+summary: |
   Chicago Manual of Style 第17版引用规范入口与官方指南索引。
 
-parents: [system-source-reference-pool-001]
-related: [system-source-citation-apa7-001]
-tags: [system, source, citation, chicago]
+parents: []
+related: ["spec-source-citation-apa7-001"]
 
-audience: public
-languages: zh
-maturity: stable
+tags: ["system", "source", "citation", "chicago"]
+
+audience: ["public"]
+languages: ["zh"]
+
+maturity: "stable"
 confidence: 0.98
-visibility: public
-source_of_truth: site
 
-created: 2026-03-01
-updated: 2026-03-01
+visibility: "public"
+source_of_truth: "spec"
+
+legacy:
+  metadata:
+    audience: public
+    languages: zh
+    parents:
+    - system-source-reference-pool-001
+    related:
+    - system-source-citation-apa7-001
+    source_of_truth: site
+    type: index
+  unresolved_relations:
+    parents:
+    - system-source-reference-pool-001
+
+created: "2026-03-01"
+updated: "2026-03-01"
+metadata_updated: "2026-10-13"
 ---
 # Chicago 17 Citation Format (Informative)
 # Chicago 17 引用格式参考

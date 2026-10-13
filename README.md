@@ -1,3 +1,38 @@
+---
+id: "spec-readme"
+title: "目录结构"
+
+module: "spec"
+submodule: "root"
+topic: "guide"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明目录结构。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+filename_policy: "entrypoint"
+
+created: "2025-12-14"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # fivsevn-spec
 
 fivsevn-spec 保存 fivsevn 体系的基础规范，约定内容、来源、引用、时间、提交、归档和版本语义。

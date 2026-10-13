@@ -1,8 +1,42 @@
+---
+id: "spec-content-frontmatter-enums-001"
+title: "Content Frontmatter 枚举表"
+
+module: "spec"
+submodule: "appendix"
+topic: "spec-content-frontmatter-enums-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明Content Frontmatter 枚举表。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2026-06-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Content Frontmatter 枚举表
 
 本文列出 fivsevn 内容 frontmatter 中建议统一管理的枚举值。
 
-本文件只负责列出可选值及简短注释；字段意义与使用规则见 `content-frontmatter-001.md`。
+本文件只负责列出可选值及简短注释；字段意义与使用规则见 [Content Frontmatter 说明](../content/spec-content-frontmatter-001.md)。
 
 ---
 
@@ -67,8 +101,8 @@ module:
 submodule:
   - index                  # posts 模块入口
   - drafts                 # posts 草稿区
-  - 2025                   # 2025 年内容
-  - 2026                   # 2026 年内容
+  - "2025"                   # 2025 年内容
+  - "2026"                   # 2026 年内容
   - ai-discourse-analysis  # AI 话语分析专题
 ```
 
@@ -395,3 +429,12 @@ non_enum_fields:
 ```
 
 ---
+
+
+## 当前目录补充
+
+- `module` 同时支持说明文件所属的 `foodie`、`stills`、`motion`、`now`、`intake`、`assets`。
+- `submodule` 以实际一级归属目录为准，包括 posts 的 `"2019"`、netcom 的 `software`；说明入口可用 `guide`，仓库根说明用 `root`，旧资料用 `legacy`。
+- spec 使用实际目录 `appendix`、`archive`、`content`、`gov`、`legacy`、`source`、`spacetime`、`system`、`ver`；旧 `refs`、`time` 不用于新稿。
+- `source_of_truth: assets` 用于资源仓库维护说明。未知日期、confidence 可为 `null`，应在 note 说明；不得自动填高可信度。
+- 完整字段类型见[机器校验表](../content/content-metadata.schema.json)，特殊信息见[统一与扩展字段](../content/spec-content-frontmatter-001.md#统一使用与扩展字段)。

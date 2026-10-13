@@ -1,3 +1,37 @@
+---
+id: "spec-commit-message-enums-001"
+title: "Commit Message 枚举表"
+
+module: "spec"
+submodule: "appendix"
+topic: "spec-commit-message-enums-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明Commit Message 枚举表。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2026-06-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Commit Message 枚举表
 
 本文列出 fivsevn 相关仓库中 commit message 可使用的前缀、适用范围、常用动词和示例。

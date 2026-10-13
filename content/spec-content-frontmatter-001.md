@@ -1,8 +1,42 @@
+---
+id: "spec-content-frontmatter-001"
+title: "Content Frontmatter 说明"
+
+module: "spec"
+submodule: "content"
+topic: "spec-content-frontmatter-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明Content Frontmatter 说明。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2026-06-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Content Frontmatter 说明
 
 本文定义 fivsevn 内容文件所使用的 YAML frontmatter 结构。frontmatter 用于描述一篇内容的基本身份、所属位置、展示状态、内容关系、语言属性、成熟程度、来源信息与更新时间。
 
-本文侧重说明每个字段的意义与使用方式。各字段可填写的具体取值，另见 `content-frontmatter-enums.md`。
+本文侧重说明每个字段的意义与使用方式。各字段可填写的具体取值，另见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ## 目录
 
@@ -87,7 +121,7 @@ frontmatter 应满足以下原则：
    字段应能支持内容目录、模块索引、归档、检索和后续迁移。
 
 4. **职责分明**  
-   本文件说明字段意义；字段可选值由 `content-frontmatter-enums.md` 统一列出。
+   本文件说明字段意义；字段可选值由 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md) 统一列出。
 
 5. **分组清楚**  
    frontmatter 应按字段含义分组书写，并在不同字段组之间保留空行，方便人工阅读和维护。
@@ -276,7 +310,7 @@ module-submodule-topic-001
 - `topic` 表示具体主题；
 - `001` 表示同一主题下的编号。
 
-`id` 推荐与文件名保持一致，但二者不是同一个概念。文件名可以改变；`id` 一旦确定，应尽量保持稳定。
+普通文档文件名统一为 `id.md`；固定入口与不能安全迁移的旧链接保留例外并记录原因。`id` 确定后尽量保持稳定，确需规范化时用 `aliases` 保留旧身份。
 
 填写要求：
 
@@ -326,7 +360,7 @@ module: natsci
 module: natsci
 ```
 
-可用取值见 `content-frontmatter-enums.md`。
+可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -346,7 +380,7 @@ submodule: paleontology
 submodule: paleontology
 ```
 
-当某篇内容是模块首页、总索引或暂不归入具体子模块时，可使用约定的子模块名称，例如 `index`。具体可用取值见 `content-frontmatter-enums.md`。
+当某篇内容是模块首页、总索引或暂不归入具体子模块时，可使用约定的子模块名称，例如 `index`。具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -396,7 +430,7 @@ type: index
 type: translation
 ```
 
-具体可用取值见 `content-frontmatter-enums.md`。
+具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 当 `type: translation` 时，必须使用翻译扩展字段：
 
@@ -438,7 +472,7 @@ status: hidden
 - 已准备公开展示并进入索引的内容，使用 `status: active`；
 - 不再展示或已归档的内容，使用 `status: archived`。
 
-具体可用取值见 `content-frontmatter-enums.md`。
+具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -622,7 +656,7 @@ audience: [internal]
 
 - 必须使用数组；
 - 即使只有一个值，也应写作 `[self]`，而不是 `self`；
-- 具体可用取值见 `content-frontmatter-enums.md`。
+- 具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -649,7 +683,7 @@ languages: [zh, en]
 - 必须使用数组；
 - 即使只有一种语言，也应写作 `[zh]`；
 - 使用短语言代码；
-- 具体可用取值见 `content-frontmatter-enums.md`。
+- 具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 对于翻译内容，`languages` 表示译文使用的语言；原文语言如有必要，可在正文或 `translation_note` 中说明。
 
@@ -674,7 +708,7 @@ maturity: draft
 - 已基本稳定；
 - 已过时或不再维护。
 
-具体可用取值见 `content-frontmatter-enums.md`。
+具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 注意：`maturity` 与 `status` 不同。
 
@@ -769,7 +803,7 @@ visibility: private
 
 则可能表示内容会进入 index 并显示为“更新中”，但其预期可见范围仍是私人或非公开。
 
-具体可用取值见 `content-frontmatter-enums.md`。
+具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -806,7 +840,7 @@ source_of_truth: translation
 
 这里的 `translation` 表示该内容的权威依据来自翻译关系及其原文材料，而不是表示当前文件本身比原文更权威。
 
-具体可用取值见 `content-frontmatter-enums.md`。
+具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
 ---
 
@@ -1262,3 +1296,65 @@ content-frontmatter-enums.md
 frontmatter 应服务于内容组织，而不是制造额外负担。若某个字段一时无法准确填写，应优先使用保守值，并在后续修订中更新。
 
 ---
+
+
+---
+
+## 统一使用与扩展字段
+
+### 适用范围
+
+- **共用核心字段**：原创、译文、旧 WordPress 存档、维护说明、板块 README、规范与历史资料。
+- **保留展示入口**：现有 `index.md`、`index.html`、devlog 根 README 和交互展示页不为统一 metadata 而改写。
+- **另有格式**：trigger、来源登记、脚本、样式、媒体及自动生成文件不套文章模板。特别设计的叙事文件保持原样。
+- **机器校验**：[content-metadata.schema.json](content-metadata.schema.json)。核心字段固定顺序与类型，非核心信息放到有明确用途的扩展字段。
+
+### 身份、路径和历史信息
+
+- 普通文档使用 **`id.md`**；`id` 用小写字母、数字和连字符，确定后尽量不变。
+- `README.md` 等固定入口保留名称，标记 `filename_policy: entrypoint`。被展示目录或已发布链接引用、暂不能安全迁移的旧路径使用 `stable-link`，在 `note` 写明原因。
+- 旧 ID 规范化后放进 `aliases`；旧路径与原字段值放进 `legacy`。它们只用于追溯和检索，**不会自动建立网页重定向或再次发布文章**。
+- `submodule` 对应板块下的一级归属目录；年份写成字符串，例如 `"2026"`。更细主题放在 `topic`、`tags`，原有值必要时保留在 `legacy.metadata`。
+- 未知的写作日期或可靠度可写 `null`，并说明缺失原因；不使用虚构日期、默认高分填满字段。
+- `created` / `updated` 保留内容日期；纯元数据整理使用 `metadata_updated`。从 Git 补日期时，在 `note` 标明它是首次记录日期，而不是已证实的写作日期。
+
+### 特殊信息放哪里
+
+| 字段 | 格式 | 收纳内容 |
+|---|---|---|
+| `note` | 字符串，可多行 | 编辑说明、缺失信息、命名例外；不代替摘要 |
+| `subtitle` | 字符串 | 旧版副标题或另一语言的标题 |
+| `references` | 对象数组，含 `section`、`text` | 旧参考资料的分组与原始引文；正文参考表可继续保留 |
+| `rights` | 对象 | 授权条件、范围、期限说明及核对情况；记录声明不等于授予许可 |
+| `archive_url` | 完整 URL | 译文等内容曾在本站 WordPress 发布的位置；区别于外文原始来源 `original_url` |
+| `aliases` | 字符串数组 | 曾使用的内容 ID，包括历史中文 ID |
+| `legacy` | 对象 | 旧字段值、旧路径、无法确认的关系、原 YAML 注释 |
+| `extra` | 对象 | 暂无专用字段的特殊资料；子键应说明含义，重复使用再提升为正式扩展 |
+| `filename_policy` | `entrypoint` / `stable-link` | 固定入口或旧链接例外；普通 `id.md` 不需要填写 |
+| `metadata_updated` | `YYYY-MM-DD` | 本次元数据整理日期 |
+
+`legacy.metadata` 保存变更前的值，`legacy.unresolved_relations` 保存尚不能确认目标的旧关系；不要为了校验通过而编造关系目标。
+
+### 页面字段
+
+按需保留 `layout`、`lang`、`description`、`canonical_url`、`permalink`：它们服务页面构建，不是重复字段。`lang` 不等于语言数组 `languages`，`canonical_url` 不等于布尔值 `canonical`。
+
+改名但要保留原文章网页地址时，可用 `permalink` 固定旧地址；需核对站点构建，不应假定旧 GitHub 文件链接也会重定向。参考 [Jekyll permalink](https://jekyllrb.com/docs/permalinks/)、[Jekyll SEO 字段](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md)。
+
+### 特殊情况示例
+
+```yaml
+note: >-
+  原始写作日期未记录；保留存档中的标题和说明，不补写无法确认的信息。
+aliases: [旧文章ID]
+legacy:
+  path: posts/2025/旧文件名.md
+  metadata:
+    submodule: 旧主题
+rights:
+  note: 原存档记载的授权条件原样说明。
+  verification: 尚未核对当前授权有效性。
+metadata_updated: 2026-10-13
+```
+
+**不丢信息，不自动重新公开，不把整理 metadata 当作正文事实或授权复核。**

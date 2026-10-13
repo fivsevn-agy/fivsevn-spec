@@ -1,9 +1,43 @@
+---
+id: "spec-commit-message-001"
+title: "Commit Message 说明"
+
+module: "spec"
+submodule: "gov"
+topic: "spec-commit-message-001"
+
+type: "spec"
+status: "active"
+canonical: true
+
+summary: "说明Commit Message 说明。"
+
+parents: []
+related: []
+
+tags: []
+
+audience: ["self", "internal"]
+languages: ["zh"]
+
+maturity: "evolving"
+confidence: null
+
+visibility: "public"
+source_of_truth: "spec"
+
+note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
+
+created: "2026-06-16"
+updated: "2026-06-16"
+metadata_updated: "2026-10-13"
+---
 # Commit Message 说明
 
 本文定义 fivsevn 相关仓库中 Git commit message 的写法。  
 目标是让提交历史保持清楚、单一、可追溯，便于以后回看、比较、撤销和整理。
 
-本文说明写作原则与基本格式。可用前缀、前缀含义与示例，另见 `commit-message-enums.md`。
+本文说明写作原则与基本格式。可用前缀、前缀含义与示例，另见 [Commit Message 枚举表](../appendix/spec-commit-message-enums-001.md)。
 
 ---
 
@@ -167,7 +201,7 @@ revert
 - 只改缩进、空行、标题格式，用 `style`；
 - 删除不用文件、整理配置，用 `chore`。
 
-具体前缀含义、可用范围和示例，见 `commit-message-enums.md`。
+具体前缀含义、可用范围和示例，见 [Commit Message 枚举表](../appendix/spec-commit-message-enums-001.md)。
 
 ---
 
