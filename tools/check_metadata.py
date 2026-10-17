@@ -14,7 +14,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 DISPLAY = {"README.md", "posts/2026/posts-toy-reference.md"}
 CONFIG = {
-    "posts/_wordpress/trigger.md", "intake/sources.md",
+    "posts/_wordpress/trigger.md", "posts/_flux/trigger.md", "intake/sources.md",
     "intake/llm-context.md", "intake/gpt.md",
 }
 
