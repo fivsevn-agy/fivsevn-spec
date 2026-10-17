@@ -22,7 +22,7 @@ class SchemaTests(unittest.TestCase):
                 check.read_metadata(path)
 
     def test_display_and_configuration_exemptions(self):
-        for name in ['README.md', 'now/index.md', 'intake/index.html', 'intake/sources.md', 'posts/_wordpress/trigger.md', 'posts/2026/posts-toy-reference.md']:
+        for name in ['README.md', 'now/index.md', 'intake/index.html', 'intake/sources.md', 'posts/_wordpress/trigger.md', 'posts/_flux/trigger.md', 'posts/2026/posts-toy-reference.md']:
             self.assertFalse(check.eligible(ROOT / name, ROOT, 'devlog'))
         self.assertTrue(check.eligible(ROOT / 'posts/README.md', ROOT, 'devlog'))
 
