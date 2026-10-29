@@ -29,8 +29,8 @@ source_of_truth: "spec"
 note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
 
 created: "2026-06-16"
-updated: "2026-06-16"
-metadata_updated: "2026-10-13"
+updated: "2026-10-29"
+metadata_updated: "2026-10-29"
 ---
 # Content Frontmatter 枚举速查
 
@@ -53,6 +53,7 @@ module:
   - natsci     # 自然科学笔记
   - netcom     # 通讯技术、工程、数学与系统笔记
   - blogops    # 博客后台、结构调整、发布与维护日志
+  - savour     # 美食、饮品与食物照片
   - spec       # 规范仓库内容；主要用于 fivsevn-spec
   - system     # 系统说明、全局索引或跨模块结构
 
@@ -192,6 +193,7 @@ module:
   - natsci     # 自然科学笔记
   - netcom     # 通讯技术、工程、数学与系统笔记
   - blogops    # 博客后台、结构调整、发布与维护日志
+  - savour     # 美食、饮品与食物照片
   - spec       # 规范仓库内容；主要用于 fivsevn-spec
   - system     # 系统说明、全局索引或跨模块结构
 
