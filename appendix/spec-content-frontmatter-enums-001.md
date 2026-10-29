@@ -29,8 +29,8 @@ source_of_truth: "spec"
 note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
 
 created: "2026-06-16"
-updated: "2026-06-16"
-metadata_updated: "2026-10-13"
+updated: "2026-10-29"
+metadata_updated: "2026-10-29"
 ---
 # Content Frontmatter 枚举表
 
@@ -79,6 +79,7 @@ module:
   - natsci     # 自然科学笔记
   - netcom     # 通讯技术、工程、数学与系统笔记
   - blogops    # 博客后台、结构调整、发布与维护日志
+  - savour     # 美食、饮品与食物照片
 ```
 
 预留或跨仓库场景：
@@ -433,7 +434,7 @@ non_enum_fields:
 
 ## 当前目录补充
 
-- `module` 同时支持说明文件所属的 `foodie`、`stills`、`motion`、`now`、`intake`、`assets`。
+- `module: savour` 用于美食分享及其维护说明；其他说明文件可使用 `stills`、`motion`、`now`、`intake`、`assets`。
 - `submodule` 以实际一级归属目录为准，包括 posts 的 `"2019"`、netcom 的 `software`；说明入口可用 `guide`，仓库根说明用 `root`，旧资料用 `legacy`。
 - spec 使用实际目录 `appendix`、`archive`、`content`、`gov`、`legacy`、`source`、`spacetime`、`system`、`ver`；旧 `refs`、`time` 不用于新稿。
 - `source_of_truth: assets` 用于资源仓库维护说明。未知日期、confidence 可为 `null`，应在 note 说明；不得自动填高可信度。
