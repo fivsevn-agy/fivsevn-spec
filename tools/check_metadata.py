@@ -81,7 +81,16 @@ def pending_draft(path: Path, root: Path, repo: str) -> bool:
     return not text.startswith(("---\n", "---\r\n"))
 
 
-def check(root: Path, schema_path: Path, repo="devlog", reference_roots=()) -> dict:
+def check(root: Path, schema_path: Path, repo="devlog", reference_roots=(), *,
+          profile=None, content_root=None, site=None) -> dict:
+    if profile is not None:
+        if profile != "site-post-v1":
+            raise ValueError(f"Unknown metadata profile: {profile}")
+        from site_post_metadata import check_packages
+        folder = Path(content_root) if content_root is not None else root
+        if not folder.is_absolute():
+            folder = root / folder
+        return check_packages(folder, site=site, schema_dir=schema_path.parent)
     schema = json.loads(schema_path.read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
     errors, warnings, documents, pending = [], [], [], []
@@ -145,8 +154,17 @@ def main() -> int:
     parser.add_argument("--repo", choices=["devlog", "spec", "assets"], default="devlog")
     parser.add_argument("--references", type=Path, action="append", default=[])
     parser.add_argument("--json", type=Path)
+    parser.add_argument("--profile", choices=["site-post-v1"],
+                        help="Explicitly validate saved post-package index.md files")
+    parser.add_argument("--content-root", type=Path,
+                        help="Package root relative to --root, or an absolute path")
+    parser.add_argument("--site", choices=["flux", "savour", "fieldlog"],
+                        help="Enforce the site's module/submodule mapping with --profile")
     args = parser.parse_args()
-    result = check(args.root.resolve(), args.schema.resolve(), args.repo, [p.resolve() for p in args.references])
+    if (args.content_root is not None or args.site is not None) and args.profile is None:
+        parser.error("--content-root and --site require --profile")
+    result = check(args.root.resolve(), args.schema.resolve(), args.repo, [p.resolve() for p in args.references],
+                   profile=args.profile, content_root=args.content_root, site=args.site)
     output = json.dumps(result, ensure_ascii=False, indent=2)
     print(output)
     if args.json:

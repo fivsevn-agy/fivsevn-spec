@@ -61,6 +61,7 @@ submodule:
   posts:
     - index                  # posts 模块入口
     - drafts                 # posts 草稿区
+    - flux                   # 独立时间线站点帖子
     - "2025"                   # 2025 年内容
     - "2026"                   # 2026 年内容
     - ai-discourse-analysis  # AI 话语分析专题
@@ -68,6 +69,7 @@ submodule:
   natsci:
     - index          # natsci 模块入口
     - drafts         # natsci 草稿区
+    - fieldlog       # 自然观察影像帖子
     - ethnobiology   # 民族生物学、人与生物关系材料
     - paleontology   # 古生物学
     - reading        # 阅读材料、文献摘记、外部文章整理
@@ -201,6 +203,7 @@ submodule:
   posts:
     - index                  # posts 模块入口
     - drafts                 # posts 草稿区
+    - flux                   # 独立时间线站点帖子
     - "2025"                   # 2025 年内容
     - "2026"                   # 2026 年内容
     - ai-discourse-analysis  # AI 话语分析专题
@@ -208,6 +211,7 @@ submodule:
   natsci:
     - index          # natsci 模块入口
     - drafts         # natsci 草稿区
+    - fieldlog       # 自然观察影像帖子
     - ethnobiology   # 民族生物学、人与生物关系材料
     - paleontology   # 古生物学
     - reading        # 阅读材料、文献摘记、外部文章整理

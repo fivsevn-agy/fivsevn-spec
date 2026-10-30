@@ -1308,6 +1308,7 @@ frontmatter 应服务于内容组织，而不是制造额外负担。若某个�
 - **保留展示入口**：现有 `index.md`、`index.html`、devlog 根 README 和交互展示页不为统一 metadata 而改写。
 - **另有格式**：trigger、来源登记、脚本、样式、媒体及自动生成文件不套文章模板。特别设计的叙事文件保持原样。
 - **机器校验**：[content-metadata.schema.json](content-metadata.schema.json)。核心字段固定顺序与类型，非核心信息放到有明确用途的扩展字段。
+- **站点帖子包**：Flux、Savour、Fieldlog 的 `YYYY/MM/id/index.md` 是正式内容，使用 [site-post-v1 profile](spec-content-site-post-001.md) 完整校验，不属于普通展示目录的 `index.md` 例外；精确发布时间与媒体、作者等放入 `extra`。
 
 ### 身份、路径和历史信息
 
