@@ -29,8 +29,8 @@ source_of_truth: "spec"
 note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
 
 created: "2026-06-16"
-updated: "2026-06-16"
-metadata_updated: "2026-10-13"
+updated: "2026-10-30"
+metadata_updated: "2026-10-30"
 ---
 # Source Intake 枚举表
 
@@ -65,6 +65,9 @@ source_type:
   - community
   - personal_site
   - data_source
+  - preprint
+  - video_channel
+  - manual
 ```
 
 | value | meaning |
@@ -82,6 +85,9 @@ source_type:
 | `community` | 社区、论坛或讨论空间 |
 | `personal_site` | 个人网站、博客或独立作者站点 |
 | `data_source` | 数据集、统计来源、仪表盘或结构化数据源 |
+| `preprint` | 预印本仓库或平台；收录不表示论文已经同行评审 |
+| `video_channel` | 视频频道；按实际发布主体和内容评估，不因媒介形式自动视作社区或一手 |
+| `manual` | 设备操作说明书、用户手册或帮助指南；包括用户拥有设备的电子说明书，保留型号/版本/语言信息 |
 
 ---
 
@@ -125,7 +131,7 @@ reliability_score:
 
 | value | meaning |
 |---|---|
-| `5` | 高可靠；官方、一手、学术或强编辑来源 |
+| `5` | 明确领域内有充分可核验的责任、方法、审查/纠错及产出证据；不由官方或学术身份自动赋分 |
 | `4` | 通常可靠；有清楚编辑、机构或专业责任 |
 | `3` | 有用但需要交叉核对 |
 | `2` | 可靠性较弱或不稳定 |
@@ -184,6 +190,8 @@ use_role:
 ---
 
 ## 6. 常用组合
+
+以下仅示范字段形状，**不是按类型自动赋分的模板**。R/P 必须按 [字段规范的评估方法](../source/spec-source-intake-fields-001.md#6-r-与-p-的评估方法) 分别给出证据、范围和理由。
 
 ### 一手机构来源
 
