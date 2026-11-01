@@ -10,7 +10,7 @@ type: spec
 status: active
 canonical: true
 
-summary: Shared source metadata, publication controls, and repository conventions for Flux, Savour, and Fieldlog.
+summary: Shared source metadata, publication controls, and repository conventions for Flux, Savour, Fieldlog, Stills, and Motion.
 
 parents: [spec-content-frontmatter-001]
 related: [spec-datetime-format-001, spec-datetime-evidence-001]
@@ -31,7 +31,7 @@ updated: '2026-10-30'
 ---
 # Site Post Metadata Profile
 
-`site-post-v1` applies the [shared content metadata](spec-content-frontmatter-001.md) to saved Flux, Savour, and Fieldlog posts. It keeps one canonical source format while allowing each site to retain its appearance, narrative, media layout, and publishing integrations.
+`site-post-v1` applies the [shared content metadata](spec-content-frontmatter-001.md) to saved Flux, Savour, Fieldlog, Stills, and Motion posts. It keeps one canonical source format while allowing each site to retain its appearance, narrative, media layout, and publishing integrations.
 
 The authoritative files are:
 
@@ -52,7 +52,7 @@ A content root contains one package per post:
 └── assets/
 ```
 
-`index.md` is content in this profile, not a generic module directory page. It receives the full core metadata and `filename_policy: entrypoint`. Its `id` matches the existing package directory. Existing IDs, directories, article addresses, media addresses, and necessary aliases remain stable when code or pagination changes. Do not rename posts merely to add a module prefix or change a schema version.
+`index.md` is content in this profile, not a generic module directory page. It receives the full core metadata and `filename_policy: entrypoint`. Its `id` matches the existing package directory. Motion retains its timestamp-prefixed directory while its stable `id` controls the public room URL. Bygone is a dedicated collection at `stills/bygone/index.md`. Existing IDs, directories, article addresses, media addresses, and necessary aliases remain stable when code or pagination changes. Do not rename posts merely to add a module prefix or change a schema version.
 
 Saved packages are distinct from free-form trigger files, README files, and generated pages. A trigger may omit frontmatter or provide only a few fields. The importer supplies a stable ID and an evidenced publication timestamp, normalizes the metadata, then validates the completed package before saving it. It must not invent a timestamp from a file's modification time or silently override an explicit draft or visibility control.
 
@@ -84,6 +84,8 @@ The site mappings are:
 | Flux | `posts` | `flux` |
 | Savour | `savour` | Publication year in Asia/Shanghai as a string, such as `"2026"` |
 | Fieldlog | `natsci` | `fieldlog` |
+| Stills | `stills` | `roll` |
+| Motion | `motion` | `roll` |
 
 Flux and Fieldlog name logical subdivisions of their parent modules. Savour uses the first directory under its own content root. These mappings do not introduce a new top-level `flux` module or slash-separated module values.
 
@@ -106,7 +108,7 @@ extra:
   profile: site-post-v1
   published_at: '2026-07-15T09:08:24+08:00'
   author: 五月七日
-  image: assets/IMG_8302.jpg
+  image: assets/20260715-090824-fieldlog-8cb7286e897c-001.webp
   alt: A field observation
   observation_id: '260715090824'
   display_status: Archived
@@ -116,7 +118,7 @@ extra:
 
 Fieldlog also requires `extra.observation_id` (twelve digits) and `extra.display_status`. `Archived` is a visual specimen label, independent of publication control: it does not mean `status: archived`.
 
-Existing integration data such as `source`, `sync`, `upload`, source hashes, WordPress identifiers, and publishing slugs is retained under `extra`. Unknown old top-level fields are retained under `legacy.metadata`, and conflicting old values are preserved there instead of replacing explicit canonical values. Existing nested `extra` and `legacy` objects retain their information.
+Active integration data such as `source`, `sync`, `upload`, source hashes, and publishing keys is retained under `extra`. Retired WordPress source URLs are omitted from Roll; YouTube video IDs and current source URLs remain. Stills requires ordered `extra.images` entries; Motion requires `extra.video_ids`. Unknown old top-level fields are retained under `legacy.metadata`, and conflicting old values are preserved there instead of replacing explicit canonical values. Existing nested `extra` and `legacy` objects retain their information.
 
 `metadata_view()` exposes the old `date`, `image`, `author`, `alt`, `archive_status`, integration keys, and preserved old fields for rendering and integration adapters. This is an in-memory view. Write only `normalize_metadata()` results through `dump_frontmatter()`; writing the compatibility view would reintroduce forbidden top-level fields.
 
@@ -129,7 +131,7 @@ A formal public post satisfies both conditions:
 
 New posts use `published`. All three compatible public states are accepted. `draft`, `hidden`, `private`, `archive`, and `archived`, or a nonpublic visibility, are excluded from public lists and detail generation. A build removes stale generated details when a post stops qualifying. These metadata controls do not make a public source repository private.
 
-Each list page contains **11 formal posts**. Introductory windows, artwork, bookends, explanatory text, and other decoration do not count toward the eleven. Sorting uses the aware publication instant; an existing stable tie order remains in effect. Changing list size does not change article URLs.
+Flux, Savour, and Fieldlog list pages contain **11 formal posts**. Stills uses its configured portfolio page size (currently 30); Motion uses its configured room page size (currently 17); Bygone uses 27 photos per collection page. Introductory windows, artwork, bookends, explanatory text, and other decoration do not count toward the eleven. Sorting uses the aware publication instant; an existing stable tie order remains in effect. Changing list size does not change article URLs.
 
 Generated website files belong in `_site/`; source repositories track content, code, and media rather than generated HTML. Standalone sites publish their static artifacts. Devlog builds the rest of its site with Jekyll and overlays Fieldlog's static output into the artifact. It must not disable Jekyll for the other Markdown modules. Platform suppression keys such as `published: false` are no longer part of canonical post frontmatter.
 
@@ -145,7 +147,7 @@ validate_metadata(meta, *, site=None, schema_dir=None) -> None
 dump_frontmatter(meta) -> str  # includes both --- fences and final newline
 ```
 
-`site` is `flux`, `savour`, or `fieldlog`. A `Path` passed to `read_frontmatter` is read as a UTF-8 file; a string is parsed as text. The body is returned without trimming. Duplicate YAML keys and an unclosed starting fence fail. Free-form text without frontmatter returns an empty metadata mapping and the original text.
+`site` is `flux`, `savour`, `fieldlog`, `stills`, or `motion`. A `Path` passed to `read_frontmatter` is read as a UTF-8 file; a string is parsed as text. The body is returned without trimming. Duplicate YAML keys and an unclosed starting fence fail. Free-form text without frontmatter returns an empty metadata mapping and the original text.
 
 Normalization does not modify its input dictionary. An existing ID wins over a fallback; a conflicting package ID is rejected to prevent a rename. Existing canonical metadata, including its bookkeeping date, is idempotent. Validation resolves the core/profile schemas from a local registry and never downloads remote schema references.
 
@@ -171,6 +173,8 @@ Profile mode scans only `YYYY/MM/id/index.md` packages below the supplied conten
 
 ## Repository documentation
 
-Each site has a detailed English README at its root; Fieldlog's root is its module directory. A `trigger_imgs/README.md` provides a short Chinese upload guide. Both link to the shared profile rather than duplicating a competing metadata contract.
+Each site README describes its build and deployment; Fieldlog's entry point is its module directory. Upload directories contain their operational guide. These guides link to the shared profile and [media naming rule](spec-content-media-naming-001.md).
 
 README files explain the current source layout, upload/edit/publish workflow, validation, and site-specific behavior. Preserve any manually maintained update log. One-time import history and reconciliation reports do not belong in the ongoing publishing instructions; retained source records remain available in their dedicated data files.
+
+Publication images follow [the media naming rule](spec-content-media-naming-001.md); naming does not change package IDs or article addresses.

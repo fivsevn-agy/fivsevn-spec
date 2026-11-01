@@ -158,7 +158,7 @@ def main() -> int:
                         help="Explicitly validate saved post-package index.md files")
     parser.add_argument("--content-root", type=Path,
                         help="Package root relative to --root, or an absolute path")
-    parser.add_argument("--site", choices=["flux", "savour", "fieldlog"],
+    parser.add_argument("--site", choices=["flux", "savour", "fieldlog", "stills", "motion"],
                         help="Enforce the site's module/submodule mapping with --profile")
     args = parser.parse_args()
     if (args.content_root is not None or args.site is not None) and args.profile is None:
