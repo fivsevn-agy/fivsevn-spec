@@ -18,7 +18,7 @@ related: [spec-datetime-format-001, spec-datetime-evidence-001]
 tags: [frontmatter, publishing, site-post]
 
 audience: [self, internal]
-languages: [zh]
+languages: [en]
 
 maturity: evolving
 confidence: null
@@ -177,6 +177,6 @@ Profile mode scans only `YYYY/MM/id/index.md` packages below the supplied conten
 
 Each site README describes its build and deployment; Fieldlog's entry point is its module directory. Upload directories contain their operational guide. These guides link to the shared profile and [media naming rule](spec-content-media-naming-001.md).
 
-README files state the current source layout, upload/edit/publish steps, and necessary validation commands. Remove superseded instructions, one-time import reports, and implementation narration; older versions remain in Git history.
+README files explain the current source layout, upload/edit/publish workflow, validation, and site-specific behavior. Preserve any manually maintained update log. One-time import history and reconciliation reports do not belong in the ongoing publishing instructions; retained source records remain available in their dedicated data files.
 
 Publication images follow [the media naming rule](spec-content-media-naming-001.md); naming does not change package IDs or article addresses.
