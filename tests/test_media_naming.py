@@ -14,8 +14,8 @@ class MediaNamingTests(unittest.TestCase):
                          r'^20270101-000000-stills-[a-f0-9]{12}-001\.jpg$')
     def test_same_second_posts_and_boards_have_distinct_names(self):
         stamp='2026-11-01T14:00:00+08:00'
-        names={media_filename(board,ident,stamp,1,'.webp') for board in ['flux','savour','fieldlog','stills','motion'] for ident in ['a','b']}
-        self.assertEqual(10,len(names))
+        names={media_filename(board,ident,stamp,1,'.webp') for board in ['flux','savour','fieldlog','stills','motion','sys','cctv'] for ident in ['a','b']}
+        self.assertEqual(14,len(names))
         self.assertTrue(media_filename('stills','a',stamp,1000,'.png').endswith('-1000.png'))
     def test_requires_evidenced_time_positive_number_and_safe_identity(self):
         for board,ident,stamp,number in [('stills','../a','2026-11-01T14:00:00Z',1),('stills','a','2026-11-01T14:00:00',1),('stills','a','2026-11-01T14:00:00Z',0)]:

@@ -50,7 +50,7 @@ YYYYMMDD-HHMMSS-<board>-<package-key>-NNN.ext
 | 部分 | 规则 |
 |---|---|
 | `YYYYMMDD-HHMMSS` | `extra.published_at` 转换为 `Asia/Shanghai` 的发布时间；年月目录使用同一时区 |
-| `board` | `flux`、`savour`、`fieldlog`、`stills` 或 `motion` |
+| `board` | `flux`、`savour`、`fieldlog`、`stills`、`motion`、`sys` 或 `cctv` |
 | `package-key` | UTF-8 字符串 `board + ":" + id` 的 SHA-256 前 12 位，小写十六进制；由工具生成 |
 | `NNN` | 本包从 `001` 开始的正整数，至少三位，超过 999 后自然扩展；不复用已分配序号 |
 | `ext` | 实际文件格式的小写扩展名；JPEG 使用 `.jpg`，WebP 使用 `.webp` |
@@ -75,6 +75,6 @@ YYYYMMDD-HHMMSS-<board>-<package-key>-NNN.ext
 python scripts/media_naming.py check --site stills --root stills
 ```
 
-校验范围包括发布、隐藏和草稿状态的正式发布包。临时上传入口允许手机原文件名；导入完成后按规则保存。未编排原始草稿、头像、横幅、字体、图标等共享素材保留原状。Motion 目前直接嵌入 YouTube，没有本地封面图片；以后增加发布包图片时使用同一规则。
+校验范围包括发布、隐藏和草稿状态的正式发布包。临时上传入口允许手机原文件名；导入完成后按规则保存。未编排原始草稿、头像、横幅、字体、图标等共享素材保留原状。Motion 和 CCTV 直接嵌入 YouTube，没有本地封面图片；SYS 可仅保存文字。以后这些发布包增加图片时使用同一规则。Fragment、Cache 和 57store 主页等独立页面的插图属于页面资源，不作为逐条发布包重新命名。
 
 图片格式由各栏目既有保存策略决定：Flux、Savour、Fieldlog 自动上传保存为 WebP，Stills 保留原始字节，显示缩图只在 `_site/` 生成。重命名本身不压缩、转换或改变照片。

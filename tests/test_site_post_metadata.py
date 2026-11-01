@@ -112,6 +112,48 @@ class SitePostTests(unittest.TestCase):
                 posts.validate_metadata(self.normalize(site=site, image=None), site=site)
         posts.validate_metadata(self.normalize(site="flux", image=None), site="flux")
 
+    def test_store_boards_keep_identity_and_require_video_metadata_only_for_cctv(self):
+        system_log = self.normalize(site="sys", image=None)
+        posts.validate_metadata(system_log, site="sys")
+        self.assertEqual((system_log["module"], system_log["submodule"], system_log["source_of_truth"]),
+                         ("57store", "sys", "site"))
+        self.assertNotIn("image", system_log["extra"])
+        with self.assertRaisesRegex(ValueError, "video_ids"):
+            posts.validate_metadata(self.normalize(site="cctv", image=None), site="cctv")
+        video = self.normalize(site="cctv", image=None, extra={"video_ids": ["AbCdEf123_-"]})
+        posts.validate_metadata(video, site="cctv")
+        self.assertEqual((video["module"], video["submodule"], video["source_of_truth"]),
+                         ("57store", "cctv", "site"))
+        for identifiers in [[], ["short"], ["contains space"]]:
+            invalid = deepcopy(video)
+            invalid["extra"]["video_ids"] = identifiers
+            with self.subTest(video_ids=identifiers), self.assertRaises(ValueError):
+                posts.validate_metadata(invalid, site="cctv")
+        with self.assertRaisesRegex(ValueError, "Site identity"):
+            posts.validate_metadata(video, site="sys")
+
+    def test_store_package_roots_and_authoritative_cli_use_plain_stable_id(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for board in ["sys", "cctv"]:
+                with self.subTest(board=board):
+                    data = self.raw(image=None, date="2026-12-31T17:00:00Z",
+                                    extra={"video_ids": ["AbCdEf123_-"]} if board == "cctv" else {})
+                    meta = posts.normalize_metadata(data, site=board)
+                    package = root / board / "2027/01/old-stable-id"
+                    package.mkdir(parents=True)
+                    (package / "index.md").write_text(posts.dump_frontmatter(meta) + "Saved text\n")
+                    result = posts.check_packages(root / board, site=board, schema_dir=ROOT / "content")
+                    self.assertEqual((result["documents"], result["errors"]), (1, []))
+                    args = ["check_metadata.py", "--profile", "site-post-v1", "--site", board,
+                            "--root", str(root), "--content-root", board,
+                            "--schema", str(ROOT / "content/content-metadata.schema.json")]
+                    with patch.object(sys, "argv", args):
+                        self.assertEqual(check_metadata.main(), 0)
+                    package.rename(package.with_name("2027-01-01-010000-old-stable-id"))
+                    result = posts.check_packages(root / board, site=board, schema_dir=ROOT / "content")
+                    self.assertEqual(len(result["errors"]), 1)
+
     def test_frontmatter_roundtrip_preserves_body_and_rejects_duplicate_or_unclosed_yaml(self):
         canonical = self.normalize()
         body = "\n**Caption**\n\n    code\n\n"

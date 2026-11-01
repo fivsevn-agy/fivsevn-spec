@@ -10,7 +10,7 @@ type: spec
 status: active
 canonical: true
 
-summary: Shared source metadata, publication controls, and repository conventions for Flux, Savour, Fieldlog, Stills, and Motion.
+summary: Shared source metadata, publication controls, and repository conventions for Flux, Savour, Fieldlog, Stills, Motion, SYS, and CCTV.
 
 parents: [spec-content-frontmatter-001]
 related: [spec-datetime-format-001, spec-datetime-evidence-001]
@@ -27,11 +27,11 @@ visibility: public
 source_of_truth: spec
 
 created: '2026-10-30'
-updated: '2026-10-30'
+updated: '2026-11-01'
 ---
 # Site Post Metadata Profile
 
-`site-post-v1` applies the [shared content metadata](spec-content-frontmatter-001.md) to saved Flux, Savour, Fieldlog, Stills, and Motion posts. It keeps one canonical source format while allowing each site to retain its appearance, narrative, media layout, and publishing integrations.
+`site-post-v1` applies the [shared content metadata](spec-content-frontmatter-001.md) to saved Flux, Savour, Fieldlog, Stills, Motion, SYS, and CCTV posts. It keeps one canonical source format while allowing each site to retain its appearance, narrative, media layout, and publishing integrations.
 
 The authoritative files are:
 
@@ -52,7 +52,7 @@ A content root contains one package per post:
 └── assets/
 ```
 
-`index.md` is content in this profile, not a generic module directory page. It receives the full core metadata and `filename_policy: entrypoint`. Its `id` matches the existing package directory. Motion retains its timestamp-prefixed directory while its stable `id` controls the public room URL. Bygone is a dedicated collection at `stills/bygone/index.md`. Existing IDs, directories, article addresses, media addresses, and necessary aliases remain stable when code or pagination changes. Do not rename posts merely to add a module prefix or change a schema version.
+`index.md` is content in this profile, not a generic module directory page. It receives the full core metadata and `filename_policy: entrypoint`. Its `id` matches the existing package directory. Motion retains its timestamp-prefixed directory while its stable `id` controls the public room URL. SYS and CCTV use plain stable-ID directories under `sys/YYYY/MM/<id>/` and `cctv/YYYY/MM/<id>/`. Bygone is a dedicated collection at `stills/bygone/index.md`. Existing IDs, directories, article addresses, media addresses, and necessary aliases remain stable when code or pagination changes. Do not rename posts merely to add a module prefix or change a schema version.
 
 Saved packages are distinct from free-form trigger files, README files, and generated pages. A trigger may omit frontmatter or provide only a few fields. The importer supplies a stable ID and an evidenced publication timestamp, normalizes the metadata, then validates the completed package before saving it. It must not invent a timestamp from a file's modification time or silently override an explicit draft or visibility control.
 
@@ -74,7 +74,7 @@ All required core fields remain present. New saved posts use these defaults when
 | `audience`, `languages` | `[public]`, `[zh]` |
 | `maturity`, `confidence` | `evolving`, `null` |
 | `visibility` | `public` |
-| `source_of_truth` | `site` for Flux/Savour; `devlog` for Fieldlog |
+| `source_of_truth` | `devlog` for Fieldlog; `site` for the other boards |
 | `filename_policy` | `entrypoint` |
 
 The site mappings are:
@@ -86,8 +86,10 @@ The site mappings are:
 | Fieldlog | `natsci` | `fieldlog` |
 | Stills | `stills` | `roll` |
 | Motion | `motion` | `roll` |
+| SYS | `57store` | `sys` |
+| CCTV | `57store` | `cctv` |
 
-Flux and Fieldlog name logical subdivisions of their parent modules. Savour uses the first directory under its own content root. These mappings do not introduce a new top-level `flux` module or slash-separated module values.
+Flux and Fieldlog name logical subdivisions of their parent modules. Savour uses the first directory under its own content root. SYS and CCTV are subdivisions of the 57store narrative site. These mappings do not introduce a new top-level `flux` module or slash-separated module values.
 
 Explicit valid status and visibility values survive normalization. The default applies only when a field is absent. Invalid explicit values fail validation rather than being converted into a public post.
 
@@ -118,7 +120,7 @@ extra:
 
 Fieldlog also requires `extra.observation_id` (twelve digits) and `extra.display_status`. `Archived` is a visual specimen label, independent of publication control: it does not mean `status: archived`.
 
-Active integration data such as `source`, `sync`, `upload`, source hashes, and publishing keys is retained under `extra`. Retired WordPress source URLs are omitted from Roll; YouTube video IDs and current source URLs remain. Stills requires ordered `extra.images` entries; Motion requires `extra.video_ids`. Unknown old top-level fields are retained under `legacy.metadata`, and conflicting old values are preserved there instead of replacing explicit canonical values. Existing nested `extra` and `legacy` objects retain their information.
+Active integration data such as `source`, `sync`, `upload`, source hashes, and publishing keys is retained under `extra`. Retired WordPress source URLs are omitted from current site packages; YouTube video IDs and current source URLs remain. Stills requires ordered `extra.images` entries; Motion and CCTV require `extra.video_ids`. SYS supports text-only logs and has no required image or video field. Unknown old top-level fields are retained under `legacy.metadata`, and conflicting old values are preserved there instead of replacing explicit canonical values. Existing nested `extra` and `legacy` objects retain their information.
 
 `metadata_view()` exposes the old `date`, `image`, `author`, `alt`, `archive_status`, integration keys, and preserved old fields for rendering and integration adapters. This is an in-memory view. Write only `normalize_metadata()` results through `dump_frontmatter()`; writing the compatibility view would reintroduce forbidden top-level fields.
 
@@ -131,7 +133,7 @@ A formal public post satisfies both conditions:
 
 New posts use `published`. All three compatible public states are accepted. `draft`, `hidden`, `private`, `archive`, and `archived`, or a nonpublic visibility, are excluded from public lists and detail generation. A build removes stale generated details when a post stops qualifying. These metadata controls do not make a public source repository private.
 
-Flux, Savour, and Fieldlog list pages contain **11 formal posts**. Stills uses its configured portfolio page size (currently 30); Motion uses its configured room page size (currently 17); Bygone uses 27 photos per collection page. Introductory windows, artwork, bookends, explanatory text, and other decoration do not count toward the eleven. Sorting uses the aware publication instant; an existing stable tie order remains in effect. Changing list size does not change article URLs.
+Flux, Savour, and Fieldlog list pages contain **11 formal posts**. Stills uses its configured portfolio page size (currently 30); Motion uses its configured room page size (currently 17); Bygone uses 27 photos per collection page. SYS and CCTV retain their own configured list sizes and visual layouts. Introductory windows, artwork, bookends, explanatory text, and other decoration do not count toward the eleven. Sorting uses the aware publication instant; an existing stable tie order remains in effect. Changing list size does not change article URLs.
 
 Generated website files belong in `_site/`; source repositories track content, code, and media rather than generated HTML. Standalone sites publish their static artifacts. Devlog builds the rest of its site with Jekyll and overlays Fieldlog's static output into the artifact. It must not disable Jekyll for the other Markdown modules. Platform suppression keys such as `published: false` are no longer part of canonical post frontmatter.
 
@@ -147,7 +149,7 @@ validate_metadata(meta, *, site=None, schema_dir=None) -> None
 dump_frontmatter(meta) -> str  # includes both --- fences and final newline
 ```
 
-`site` is `flux`, `savour`, `fieldlog`, `stills`, or `motion`. A `Path` passed to `read_frontmatter` is read as a UTF-8 file; a string is parsed as text. The body is returned without trimming. Duplicate YAML keys and an unclosed starting fence fail. Free-form text without frontmatter returns an empty metadata mapping and the original text.
+`site` is `flux`, `savour`, `fieldlog`, `stills`, `motion`, `sys`, or `cctv`. A `Path` passed to `read_frontmatter` is read as a UTF-8 file; a string is parsed as text. The body is returned without trimming. Duplicate YAML keys and an unclosed starting fence fail. Free-form text without frontmatter returns an empty metadata mapping and the original text.
 
 Normalization does not modify its input dictionary. An existing ID wins over a fallback; a conflicting package ID is rejected to prevent a rename. Existing canonical metadata, including its bookkeeping date, is idempotent. Validation resolves the core/profile schemas from a local registry and never downloads remote schema references.
 
@@ -158,7 +160,7 @@ python scripts/site_post_metadata.py normalize --site savour --root savour --sch
 python scripts/site_post_metadata.py check --site savour --root savour --schema-dir schemas
 ```
 
-The helper prepares and validates all packages before writing any normalized file. `check` is read-only. Root paths for the other sites are `flux` and `natsci/fieldlog`, respectively.
+The helper prepares and validates all packages before writing any normalized file. `check` is read-only. Content roots are `flux`, `savour`, `natsci/fieldlog`, `stills`, `motion`, `sys`, and `cctv` in their owning repositories. Independent pages such as Fragment and Cache use the core document metadata rather than a saved-post profile.
 
 CI can use the current authoritative spec checkout explicitly:
 

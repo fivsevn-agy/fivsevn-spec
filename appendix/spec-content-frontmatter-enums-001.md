@@ -29,8 +29,8 @@ source_of_truth: "spec"
 note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
 
 created: "2026-06-16"
-updated: "2026-10-29"
-metadata_updated: "2026-10-29"
+updated: "2026-11-01"
+metadata_updated: "2026-11-01"
 ---
 # Content Frontmatter 枚举表
 
@@ -80,6 +80,9 @@ module:
   - netcom     # 通讯技术、工程、数学与系统笔记
   - blogops    # 博客后台、结构调整、发布与维护日志
   - savour     # 美食、饮品与食物照片
+  - stills     # Roll 摄影影集
+  - motion     # Roll 视频放映室
+  - 57store    # 便利店叙事页面、系统片段与 CCTV
 ```
 
 预留或跨仓库场景：
@@ -158,6 +161,19 @@ submodule:
   - refs     # 引用规范
   - time     # 时间语义规范
 ```
+
+### 3.6 `57store`
+
+```yaml
+submodule:
+  - index     # 57store 站点入口
+  - sys       # 逐条发布的终端片段
+  - cctv      # 店铺频道视频
+  - fragment  # Fragment 独立页面
+  - cache     # Cache 独立页面
+```
+
+SYS、CCTV 发布包的保存格式见 [Site Post Metadata Profile](../content/spec-content-site-post-001.md)。
 
 ---
 

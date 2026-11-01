@@ -43,7 +43,7 @@ Shared contracts for the fivsevn content repositories. Active documents define c
 ## Publishing contracts
 
 - [Content frontmatter](content/spec-content-frontmatter-001.md) and [core JSON schema](content/content-metadata.schema.json).
-- [Site-post profile](content/spec-content-site-post-001.md) and [profile schema](content/site-post.schema.json) for Flux, Savour, Fieldlog, Stills, and Motion.
+- [Site-post profile](content/spec-content-site-post-001.md) and [profile schema](content/site-post.schema.json) for Flux, Savour, Fieldlog, Stills, Motion, SYS, and CCTV.
 - [Publication media naming](content/spec-content-media-naming-001.md).
 - [Date and time](spacetime/spec-datetime-format-001.md) and [time evidence](spacetime/spec-datetime-evidence-001.md).
 - [Field values](appendix/spec-content-frontmatter-enums-001.md) and [quick reference](appendix/spec-content-frontmatter-enums-quickref-001.md).
