@@ -59,10 +59,21 @@ def read_metadata(path: Path) -> dict:
 
 def eligible(path: Path, root: Path, repo: str) -> bool:
     relative = path.relative_to(root)
-    if any(part.startswith(".") for part in relative.parts):
+    if relative.parts[0] == "_site" or any(part.startswith(".") for part in relative.parts):
         return False
     if path.name.lower() in {"index.md", "index.html"}:
-        return False
+        # Posts and AI long-form packages use index.md as their source article,
+        # while module landing pages remain display-only exclusions.
+        parts = relative.parts
+        if parts[:2] == ("posts", "ai-discourse-analysis"):
+            parts = ("posts", *parts[2:])
+        return (
+            repo == "devlog" and path.name == "index.md" and len(parts) == 5
+            and parts[0] == "posts"
+            and re.fullmatch(r"[0-9]{4}", parts[1]) is not None
+            and re.fullmatch(r"[0-9]{2}", parts[2]) is not None
+            and not parts[3].startswith("_") and parts[3] != "assets"
+        )
     if repo == "devlog" and relative.as_posix() in DISPLAY | CONFIG:
         return False
     return path.suffix.lower() == ".md"
@@ -97,7 +108,8 @@ def check(root: Path, schema_path: Path, repo="devlog", reference_roots=(), *,
     ids, registry = {}, set()
     for folder in [root, *reference_roots]:
         for path in folder.rglob("*.md"):
-            if any(part.startswith(".") for part in path.relative_to(folder).parts):
+            relative = path.relative_to(folder)
+            if relative.parts[0] == "_site" or any(part.startswith(".") for part in relative.parts):
                 continue
             try:
                 metadata = read_metadata(path)

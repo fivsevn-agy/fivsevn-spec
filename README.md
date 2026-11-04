@@ -75,6 +75,6 @@ python -m unittest discover -s tests -v
 python tools/check_metadata.py --repo spec --schema content/content-metadata.schema.json
 ```
 
-To check a connected site's saved packages, pass `--profile site-post-v1 --site <board> --content-root <folder>` to `tools/check_metadata.py`. Ordinary documents and saved publication packages have separate validation entry points because fixed directory pages and temporary trigger files are not publication packages.
+Ordinary documents use the core checker above. To include Devlog's long-form Posts/AI `YYYY/MM/<package>/index.md` articles, run it with `--repo devlog --root <devlog-checkout>`. Fixed directory pages and generated `_site/` output remain excluded. To check a connected board's saved packages, pass `--profile site-post-v1 --site <board> --content-root <folder>` to `tools/check_metadata.py`; temporary trigger files are not publication packages.
 
 The `Check shared metadata` workflow runs on pushes and pull requests. It validates the documents and shared helpers; this repository does not deploy a public website.

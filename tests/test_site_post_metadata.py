@@ -212,6 +212,64 @@ class SitePostTests(unittest.TestCase):
                 self.assertEqual(posts.main(), 0)
             self.assertEqual(first.read_bytes(), canonical_bytes)
 
+    def test_cli_normalization_rejects_package_errors_without_any_writes(self):
+        batches = [
+            ('flux', [
+                ('2026/07/first', self.raw(id='first')),
+                ('2026/07/last', self.raw(id='last', date='2026-06-15T09:08:24+08:00')),
+            ], 'package directory'),
+            ('flux', [
+                ('2026/06/same-id', self.raw(id='same-id', date='2026-06-15T09:08:24+08:00')),
+                ('2026/07/same-id', self.raw(id='same-id')),
+            ], 'duplicate id'),
+            ('motion', [
+                ('2026/06/2026-06-15-090824-same-id', self.raw(
+                    id='same-id', date='2026-06-15T09:08:24+08:00', extra={'video_ids': ['AbCdEf123_-']})),
+                ('2026/07/2026-07-15-090824-same-id', self.raw(
+                    id='same-id', extra={'video_ids': ['AbCdEf123_-']})),
+            ], 'duplicate id'),
+            ('stills', [
+                ('bygone', self.raw(id='bygone', extra={
+                    'mode': 'album', 'images': [{'file': 'assets/original.jpg'}]})),
+            ], 'independent collection'),
+        ]
+        for site, packages, error in batches:
+            with self.subTest(site=site, error=error), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                for relative, raw in packages:
+                    source = root / relative / 'index.md'
+                    source.parent.mkdir(parents=True)
+                    source.write_text('---\n' + json.dumps(raw) + '\n---\nBody\n')
+                before = {path: path.read_bytes() for path in root.rglob('index.md')}
+                args = ['site_post_metadata.py', 'normalize', '--site', site, '--root', str(root),
+                        '--schema-dir', str(ROOT / 'content')]
+                with patch.object(sys, 'argv', args), \
+                        patch.object(Path, 'write_text', side_effect=AssertionError('failed batch must not write')), \
+                        self.assertRaisesRegex(ValueError, error):
+                    posts.main()
+                self.assertEqual({path: path.read_bytes() for path in before}, before)
+
+    def test_cli_normalization_preserves_motion_and_bygone_package_rules(self):
+        for site, relative, raw in [
+            ('motion', '2027/01/2027-01-01-010000-old-stable-id', self.raw(
+                date='2026-12-31T17:00:00Z', extra={'video_ids': ['AbCdEf123_-']})),
+            ('stills', 'bygone', self.raw(id='bygone', extra={
+                'mode': 'collection', 'images': [{'file': 'assets/original.jpg'}]})),
+        ]:
+            with self.subTest(site=site), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                source = root / relative / 'index.md'
+                source.parent.mkdir(parents=True)
+                body = '\nThe original caption.\n\n'
+                source.write_text('---\n' + json.dumps(raw) + '\n---\n' + body)
+                args = ['site_post_metadata.py', 'normalize', '--site', site, '--root', str(root),
+                        '--schema-dir', str(ROOT / 'content')]
+                with patch.object(sys, 'argv', args):
+                    self.assertEqual(posts.main(), 0)
+                self.assertEqual(posts.check_packages(root, site=site)['errors'], [])
+                meta, preserved = posts.read_frontmatter(source)
+                self.assertEqual((meta['id'], preserved), (raw['id'], body))
+
 
 if __name__ == "__main__":
     unittest.main()

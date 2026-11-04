@@ -27,7 +27,7 @@ visibility: public
 source_of_truth: spec
 
 created: '2026-10-30'
-updated: '2026-11-01'
+updated: '2026-11-04'
 ---
 # Site Post Metadata Profile
 
@@ -160,7 +160,7 @@ python scripts/site_post_metadata.py normalize --site savour --root savour --sch
 python scripts/site_post_metadata.py check --site savour --root savour --schema-dir schemas
 ```
 
-The helper prepares and validates all packages before writing any normalized file. `check` is read-only. Content roots are `flux`, `savour`, `natsci/fieldlog`, `stills`, `motion`, `sys`, and `cctv` in their owning repositories. Independent pages such as Fragment and Cache use the core document metadata rather than a saved-post profile.
+The helper prepares and validates all packages, including their paths, publication dates and batch-wide unique IDs, before writing any normalized file. A validation failure leaves every source file unchanged. `check` is read-only. Content roots are `flux`, `savour`, `natsci/fieldlog`, `stills`, `motion`, `sys`, and `cctv` in their owning repositories. Independent pages such as Fragment and Cache use the core document metadata rather than a saved-post profile.
 
 CI can use the current authoritative spec checkout explicitly:
 
@@ -171,7 +171,7 @@ python .metadata-spec/tools/check_metadata.py \
   --profile site-post-v1 --site fieldlog --content-root natsci/fieldlog
 ```
 
-Profile mode scans only `YYYY/MM/id/index.md` packages below the supplied content root. It validates the shared core and the profile, checks ID/package agreement and duplicate IDs, and ignores trigger files and generated HTML. The ordinary checker mode continues to validate regular documents and preserve its existing display-index exclusions. Run both modes when a repository contains both kinds of content.
+Profile mode scans only `YYYY/MM/id/index.md` packages below the supplied content root. It validates the shared core and the profile, checks ID/package agreement and duplicate IDs, and ignores trigger files and generated HTML. The ordinary checker mode validates regular documents plus Devlog's `posts/YYYY/MM/<package>/index.md` and `posts/ai-discourse-analysis/YYYY/MM/<package>/index.md` long-form articles against the core schema, sharing the same ID and content-date checks. Fixed directory display pages remain excluded. Long-form package names and existing addresses are not replaced by board-profile naming rules. Run both modes when a repository contains both kinds of content.
 
 ## Repository documentation
 
