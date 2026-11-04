@@ -50,7 +50,7 @@ Shared contracts for the fivsevn content repositories. Active documents define c
 - [Date and time](spacetime/spec-datetime-format-001.md) and [time evidence](spacetime/spec-datetime-evidence-001.md).
 - [Field values](appendix/spec-content-frontmatter-enums-001.md) and [quick reference](appendix/spec-content-frontmatter-enums-quickref-001.md).
 
-[AI translation guidance](content/spec-content-translation-001.md) is for personal study and covers fidelity, language, and source structure. The user’s `translate and post.md` is the actual publishing prompt; its workflow is maintained separately in devlog.
+[AI translation guidance](content/spec-content-translation-001.md) covers translation methods, language, terminology, and formatting.
 
 ## Source layout
 

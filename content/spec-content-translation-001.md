@@ -1,6 +1,6 @@
 ---
 id: "spec-content-translation-001"
-title: "个人学习用 AI 翻译指导"
+title: "AI 翻译规范"
 
 module: "spec"
 submodule: "content"
@@ -10,7 +10,7 @@ type: "spec"
 status: "active"
 canonical: true
 
-summary: "供个人学习使用，指导 AI 忠实、完整、自然地翻译原文并保留原有结构。"
+summary: "说明翻译方法、中文表达、术语与格式处理。"
 
 parents: []
 related: []
@@ -30,14 +30,10 @@ note: "未记录原始写作日期；created 为本路径首次 Git 记录日期
 
 created: "2026-06-16"
 updated: "2026-11-04"
-metadata_updated: "2026-10-13"
+metadata_updated: "2026-11-04"
 ---
 
-# 个人学习用 AI 翻译指导
-
-本规范供个人学习使用，只说明 AI 应该怎样把原文准确、完整、自然地翻译成中文。适用于网页文章、技术文档、新闻、PDF 和其他已提供的原始材料。
-
-本规范是翻译指导，不是实际发布提示词。实际发布提示词以用户的 `translate and post.md` 为准；本文不定义其操作流程或页面模板。
+# AI 翻译规范
 
 ## 忠实与完整
 
