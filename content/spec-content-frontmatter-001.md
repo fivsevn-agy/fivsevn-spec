@@ -29,8 +29,8 @@ source_of_truth: "spec"
 note: "未记录原始写作日期；created 为本路径首次 Git 记录日期，无法合理确定时留空。"
 
 created: "2026-06-16"
-updated: "2026-06-16"
-metadata_updated: "2026-10-13"
+updated: "2026-11-05"
+metadata_updated: "2026-11-05"
 ---
 # Content Frontmatter 说明
 
@@ -454,7 +454,7 @@ status: hidden
 
 在 fivsevn-devlog 的自动化流程中，`status` 会影响模块 index 的生成方式。它不仅是一般意义上的“写作状态”，也是内容是否进入索引、以何种形式进入索引的控制字段。
 
-当前规则如下：
+当 `visibility: public`，或兼容尚未填写 `visibility` 的历史文档时，`status` 的规则如下；显式填写非 `public` 的文档不进入模块 index：
 
 | `status` | 索引行为 |
 |---|---|
@@ -783,7 +783,7 @@ visibility: private
 visibility: public
 ```
 
-需要注意的是，在当前 devlog 自动化中，模块 index 的生成主要由 `status` 控制，而不是由 `visibility` 控制。
+当前 devlog 自动化同时检查 `status` 与 `visibility`：`status` 决定条目隐藏、显示为“更新中”或生成链接；任何显式非 `public` 的 `visibility` 都会使文档不进入模块 index。未填写或留空的 `visibility` 仅为兼容历史文档，仍按 `status` 处理，不代表新增内容应省略此字段。
 
 因此：
 
@@ -801,7 +801,14 @@ status: draft
 visibility: private
 ```
 
-则可能表示内容会进入 index 并显示为“更新中”，但其预期可见范围仍是私人或非公开。
+同样不进入 index，因为 `visibility: private` 会被过滤。需要公开显示为“更新中”时，应使用：
+
+```yaml
+status: draft
+visibility: public
+```
+
+旧版本曾主要按 `status` 生成目录，因此历史说明中出现过私人草稿也可能列入目录的示例；这不是当前规则。目录过滤也不提供文件访问控制，公开仓库中的源文件仍可直接读取。
 
 具体可用取值见 [Content Frontmatter 枚举表](../appendix/spec-content-frontmatter-enums-001.md)。
 
@@ -1178,7 +1185,7 @@ status: draft
 visibility: private
 ```
 
-表示内容可能进入模块 index 并显示为“更新中”，但预期可见范围仍为私人或非公开。
+表示内容不进入模块 index。若需要公开显示为“更新中”，应将 `visibility` 设为 `public`。
 
 ---
 
