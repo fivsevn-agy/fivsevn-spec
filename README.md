@@ -32,7 +32,7 @@ source_of_truth: spec
 filename_policy: entrypoint
 
 created: '2025-12-14'
-updated: '2026-11-01'
+updated: '2026-11-04'
 metadata_updated: '2026-11-01'
 ---
 
@@ -50,11 +50,13 @@ Shared contracts for the fivsevn content repositories. Active documents define c
 - [Date and time](spacetime/spec-datetime-format-001.md) and [time evidence](spacetime/spec-datetime-evidence-001.md).
 - [Field values](appendix/spec-content-frontmatter-enums-001.md) and [quick reference](appendix/spec-content-frontmatter-enums-quickref-001.md).
 
+[AI translation guidance](content/spec-content-translation-001.md) is for personal study and covers fidelity, language, and source structure. The user’s `translate and post.md` is the actual publishing prompt; its workflow is maintained separately in devlog.
+
 ## Source layout
 
 | Directory | Responsibility |
 |---|---|
-| `content/` | Metadata, publication profiles, translation and media rules |
+| `content/` | Metadata, publication profiles, AI translation guidance and media rules |
 | `tools/` | Offline metadata normalizer, validators and media-name generator |
 | `appendix/` | Enumerations and lookup tables |
 | `spacetime/` | Dates, times and evidence |
